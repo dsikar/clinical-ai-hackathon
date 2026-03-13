@@ -81,6 +81,7 @@ Join: https://teams.microsoft.com/meet/37043891575225?p=OAaSEhT8PZcOsFp4Zs
 Meeting ID: 370 438 915 752 25
 Passcode: KR2Zk2XG 
 ```
+Please take the time to add the Hackathon intro chat meeting to your calendar.
 
 ## Workshops Tuesday 17 - Thursday 19
 
