@@ -67,13 +67,15 @@ hackathon-baseline-solution/
 
 ## Next Steps
 
-Please read this README.md file carefully. Meeting minutes and original specification can be found in /docs directory.
+Please read this README.md file carefully.
 
-## Q&A with NHS team Monday 16
+## Q&A with NHS team Monday 16 10:00-10:30
 
 Please attend meeting with Dr Anita Wale (NHS) and Dr Alex Nicholls (MoD) Monday 16 10:00-10:30 to clarify any doubts you may have:
 
 ```
+Hackathon intro chat
+Mon 16/03/2026 10:00 - 10:30
 Microsoft Teams meeting
 Join: https://teams.microsoft.com/meet/37043891575225?p=OAaSEhT8PZcOsFp4Zs
 Meeting ID: 370 438 915 752 25
