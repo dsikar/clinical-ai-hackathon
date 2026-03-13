@@ -71,7 +71,7 @@ Please read this README.md file carefully.
 
 ## Q&A with NHS team Monday 16 10:00-10:30
 
-Please attend meeting with Dr Anita Wale (NHS) and Dr Alex Nicholls (MoD) Monday 16 10:00-10:30 to clarify any doubts you may have:
+Please attend the online meeting with Dr Anita Wale (NHS) and Dr Alex Nicholls (MoD), together with domain expert Hitesh Patel and sythentic dataset curator Ellie Hickey, Monday 16 10:00-10:30 to clarify any doubts you may have - link below:
 
 ```
 Hackathon intro chat
@@ -88,7 +88,7 @@ Time TBA
 
 College Building (AG04, AG01, A220, A108, A225, BLG08)
 
-## Final Friday 20 11:00-15:30
+## Final Friday 20 10:00-15:30
 
 Opening and awards: Centenary (HG01 - Birley) and Tait (C322) 
  
