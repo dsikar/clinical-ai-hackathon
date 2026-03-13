@@ -1,4 +1,4 @@
-<img src="docs/digital_screen_1.jpg" alt="Clinical AI Hackathon" width="50%">
+<img src="docs/digital_screen_1.jpg" alt="Clinical AI Hackathon" width="80%">
 
 ## Problem Statement - by Dr Anita Wale
 
@@ -23,11 +23,11 @@ Across the NHS there are researchers laboriously looking through notes to find o
 
 ## Dataset
 
-**Input**: `data/hackathon-mdt-outcome-proformas.docx`
+**Input**: [`data/hackathon-mdt-outcome-proformas.docx`](data/hackathon-mdt-outcome-proformas.docx)
 - 50 synthetic MDT cases
 - Anonymised using dummy NHS numbers (starting with "NNN") and date shifting
 
-**Output**: `data/hackathon-database-prototype.xlsx`
+**Output**: [`data/hackathon-database-prototype.xlsx`](data/hackathon-database-prototype.xlsx)
 - Longitudinal patient data in sequential (linear) format
 - Attributes populated as they appear in the documents
 - Where information is missing or not discussed, cells are left null (empty)
