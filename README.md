@@ -149,4 +149,6 @@ Y4hu3WK2
 
 ---
 
-*This document was written by [Daniel Sikar](https://github.com/dsikar) with [Claude Code](https://code.claude.com/docs/en/overview).*
+## Credits
+
+Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/). Document compiled by [Daniel Sikar](https://github.com/dsikar) using [Claude Code](https://code.claude.com/docs/en/overview).
