@@ -113,6 +113,7 @@ baseline-solution/
 │   ├── 02-claude-code-handoff.md
 │   └── ... (agent-specific prompts)
 ├── reports/
+│   ├── clinician-questions.md
 │   ├── colorectal-cancer-primer.md
 │   ├── codex-gap-report.md
 │   ├── gemini-gap-report.md
