@@ -21,3 +21,4 @@
 | 17 | Competition entry repos fork/merge policy | Daniel | Medium | Not Started | Advise teams on suggested policy to share code between team on github, to minimise merge conflicts |
 | 18 | Print scoring rubrics | Isaac | Medium | Not Started | Complete by Friday 09:00 — team number and names dependency |
 | 19 | Assign participants to teams | Daniel | High | Not Started | Complete by Monday evening/night |
+| 20 | Collect merchandise | Isaac | Medium | Not Started | To be collected from Asif and Gavin |
