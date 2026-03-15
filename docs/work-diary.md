@@ -89,5 +89,48 @@ All dataset details consolidated into single Dataset section. Technical details 
 - `docs/` - Background materials (specification, meeting minutes, example images)
 - `data/` - Input Word document and output Excel example
 
+## Final Refinements
+
+### Image Organization
+Moved all image files from root to `docs/` directory for cleaner structure:
+- `digital_screen_1.jpg` - Banner image (in use)
+- `logo_asset_2.jpg` - Alternate banner
+- `mdt_outcome.png` - Example MDT outcome
+- `prototype.png` - Example prototype output
+
+Updated README.md references to point to `docs/` for all images.
+
+### Visual Adjustments
+- Increased banner width from 50% to 80% for better visibility
+- Converted data file paths to clickable markdown links:
+  - `data/hackathon-mdt-outcome-proformas.docx`
+  - `data/hackathon-database-prototype.xlsx`
+
+### Repository Rename
+Renamed repository from `hackathon-baseline-solution` to `clinical-ai-hackathon`:
+- **Rationale**: Original name misleading as baseline solution not yet provided; new name accurately reflects main hackathon repository
+- Updated git remote URL: `git@github.com:dsikar/clinical-ai-hackathon.git`
+- Renamed local directory to match: `~/git/citystgeorges-hackathon/clinical-ai-hackathon`
+
+## Final Repository Structure
+```
+clinical-ai-hackathon/
+├── README.md                 # Main documentation with banner, problem statement, dataset info
+├── data/
+│   ├── hackathon-mdt-outcome-proformas.docx
+│   └── hackathon-database-prototype.xlsx
+└── docs/
+    ├── specification.md
+    ├── minutes_february_12.md
+    ├── minutes_march_2nd.md
+    ├── work-diary.md
+    ├── room_bookings.md
+    ├── digital_screen_1.jpg    # Banner
+    ├── logo_asset_2.jpg        # Alternate banner
+    ├── mdt_list.png            # From specification
+    ├── mdt_outcome.png         # From specification + example
+    └── prototype.png           # Example output
+```
+
 ## Status
 Repository ready for mass email distribution to 106 hackathon participants.

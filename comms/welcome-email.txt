@@ -1,0 +1,57 @@
+Subject: Clinical AI Hackathon – Welcome and Getting Started (16–20 March)
+
+Dear all,
+
+Welcome to the City St George's Clinical AI Hackathon! We're delighted to have you joining us
+next week.
+
+The hackathon runs Monday 16 to Friday 20 March. The challenge is to build a tool that
+extracts structured patient data from NHS MDT (multidisciplinary team) Word documents into
+a searchable database format, reducing the manual burden on clinicians across the NHS.
+
+--
+
+GETTING STARTED
+
+Everything you need is in the GitHub repository:
+
+  https://github.com/dsikar/clinical-ai-hackathon
+
+Please read the README carefully before Monday. It contains:
+  - The clinical problem statement (from Dr Anita Wale)
+  - The dataset: 50 synthetic MDT cases (Word doc) and an example output (Excel)
+  - Success criteria
+  - Technical considerations (DTAC, SaMD compliance)
+
+--
+
+SCHEDULE
+
+Monday 16
+  10:00–10:30  Q&A with Dr Anita Wale (NHS) and Dr Alex Nicholls (MoD)
+               Microsoft Teams – join link in the README
+  Workshop room: AG04, College Building
+
+Tuesday 17
+  Workshop room: AG01, College Building  09:00–17:30
+
+Wednesday 18
+  Workshop rooms: A220 (09:00–13:00), A108 (14:30–17:00), College Building
+
+Thursday 19
+  Workshop rooms: A225 (09:00–12:30), BLG08 (14:00–17:30), College Building
+
+Friday 20 – Final Day  11:00–15:30
+  Opening and awards: Centenary Building HG01 (Birley) and Tait Building C322
+  Presentations: College Building (A307, AG01, AG04, A218, A108)
+
+--
+
+If you have any questions before Monday, please reply to this email.
+
+We look forward to seeing what you build.
+
+Best wishes,
+
+[Your name]
+City St George's Clinical AI Hackathon Organising Team

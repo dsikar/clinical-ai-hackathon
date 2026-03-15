@@ -85,12 +85,25 @@ Please take the time to add the Hackathon intro chat meeting to your calendar.
 
 ## Workshops Tuesday 17 - Thursday 19
 
-Time TBA 
+All rooms in College Building.
 
-College Building (AG04, AG01, A220, A108, A225, BLG08)
+**Tuesday 17 — AI Agents**
+- AG01 — 09:00–17:30
 
-## Final Friday 20 10:00-15:30
+**Wednesday 18 — Coding with LLM APIs**
+- A220 — 09:00–13:00
+- A108 — 14:30–17:00
 
-Opening and awards: Centenary (HG01 - Birley) and Tait (C322) 
- 
-Presentations: College Building (A307, AG01, AG04, A218 and A108)
+**Thursday 19 — Documentation and Allnighter** *(late joiners welcome)*
+- A225 — 09:00–12:30
+- BLG08 — 14:00–17:30
+- ELG08 — 23:00–09:00 (Monster + Pizza)
+
+## Final Friday 20
+
+**Grand Opening** — Centenary Building HG01 (Birley) — 09:00–11:30
+
+**Presentations** — College Building — 11:00–15:30
+- A307, AG01, AG04, A218 (until 14:00 then A108)
+
+**Awards** — Tait Building C322
