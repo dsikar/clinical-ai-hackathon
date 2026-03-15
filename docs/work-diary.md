@@ -165,3 +165,8 @@ Finalise repository content and communications materials ahead of the hackathon 
 
 ### .gitignore
 - Added to exclude `comms/recipients.txt` from version control
+
+## Credits Section
+- Added Credits section to end of README.md
+- Clinical problem statement credited to Dr Anita Wale (linked to St George's profile)
+- Repository credited to Daniel Sikar with Claude Code, OpenAI Codex and Google Gemini
