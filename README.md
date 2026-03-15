@@ -60,6 +60,16 @@ clinical-ai-hackathon/
 ├── data/
 │   ├── hackathon-mdt-outcome-proformas.docx    # Input data (50 synthetic MDT cases)
 │   └── hackathon-database-prototype.xlsx       # Expected output format
+├── baseline-solution/
+│   ├── README.md                    # Baseline solution overview, attempts, and gap reports
+│   ├── prompts/
+│   │   ├── 00-prompt-starter.md     # Agent startup and diary-update prompt authored by Codex
+│   │   └── 01-implementation_plan.md # Builder-focused implementation prompt authored by Codex
+│   │   └── 02-claude-code-handoff.md # High-context execution prompt for Claude Code authored by Codex
+│   ├── reports/
+│   │   ├── gemini-gap-report.md     # Analysis of Gemini's implementation gaps
+│   │   └── codex-gap-report.md      # Analysis of Codex implementation gaps
+│   └── work-diary.md                # Detailed build diary and handoff notes authored by Codex
 └── docs/
     ├── specification.md             # Clinical problem description
     ├── minutes_february_12.md       # Problem definition meeting
