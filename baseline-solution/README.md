@@ -109,11 +109,17 @@ baseline-solution/
 ├── work-diary.md
 ├── prompts/
 │   ├── 00-prompt-starter.md
-│   └── 01-implementation_plan.md
-│   └── 02-claude-code-handoff.md
+│   ├── 01-implementation_plan.md
+│   ├── 02-claude-code-handoff.md
+│   └── ... (agent-specific prompts)
 ├── reports/
+│   ├── colorectal-cancer-primer.md
+│   ├── codex-gap-report.md
 │   ├── gemini-gap-report.md
-│   └── codex-gap-report.md
+│   ├── deep-research-claude.docx
+│   ├── deep-research-gemini.docx
+│   ├── deep-research-grok.md
+│   └── ... (LLM research artifacts)
 ├── src/
 │   ├── claude_extract_fields.py
 │   ├── codex_extract_fields.py
