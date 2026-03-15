@@ -88,22 +88,52 @@ Please take the time to add the Hackathon intro chat meeting to your calendar.
 All rooms in College Building.
 
 **Tuesday 17 — AI Agents**
-- AG01 — 09:00–17:30
+- AG01 — 09:00–17:30  
+  
+1h in person and online sessions, starting on the hour, every hour, join anytime that suits.
 
 **Wednesday 18 — Coding with LLM APIs**
-- A220 — 09:00–13:00
+- A220 — 09:00–13:00 
 - A108 — 14:30–17:00
 
 **Thursday 19 — Documentation and Allnighter** *(late joiners welcome)*
 - A225 — 09:00–12:30
 - BLG08 — 14:00–17:30
-- ELG08 — 23:00–09:00 (Monster + Pizza)
+
+1h in person and online sessions, starting on the hour, every hour, join anytime that suits.
+
+- ELG08 (Study Area) — 23:00–09:00 (Monster + Pizza overnight)
+
+Join any time to fine tune your work, or start from scratch.
+  
 
 ## Final Friday 20
 
 **Grand Opening** — Centenary Building HG01 (Birley) — 09:00–11:30
 
-**Presentations** — College Building — 11:00–15:30
-- A307, AG01, AG04, A218 (until 14:00 then A108)
+**Presentations** — College Building — 11:00–14:30
+- A307
+- AG01
+- AG04
+- A218 (until 14:00 then A108)
 
-**Awards** — Tait Building C322
+**Awards** — Tait Building C322 — 14:00–15:30
+
+## Activities Meeting Link
+
+```
+Clinical AI Hackathon Meeting Loop Tuesday 17 to Friday 20
+
+This is a continuous meeting invite for ALL activities involving the Clinical AI Hackathon:
+
+Microsoft Teams meeting
+
+Join:
+https://teams.microsoft.com/meet/33037306308339?p=5CBDbMszGpfSWTUoIK
+
+Meeting ID:
+330 373 063 083 39
+
+Passcode:
+Y4hu3WK2
+```
