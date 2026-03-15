@@ -52,17 +52,26 @@ Longitudinal patient data presented in Excel reflects patient history contained 
 ## Current Repository Structure
 
 ```
-hackathon-baseline-solution/
-├── README.md                 # This file
+clinical-ai-hackathon/
+├── README.md                        # This file
+├── comms/
+│   ├── welcome-email.txt            # Participant welcome email
+│   └── mc-script-maeve.md          # MC script for opening/closing ceremonies
 ├── data/
-│   ├── hackathon-mdt-outcome-proformas.docx    # Input data
+│   ├── hackathon-mdt-outcome-proformas.docx    # Input data (50 synthetic MDT cases)
 │   └── hackathon-database-prototype.xlsx       # Expected output format
-└── docs/                     # Background documentation
-    ├── specification.md      # Clinical problem description
-    ├── minutes_february_12.md    # Problem definition meeting
-    ├── minutes_march_2nd.md      # Dataset and scope meeting
-    ├── mdt_list.png          # Example MDT list format
-    └── mdt_outcome.png       # Example MDT outcome format
+└── docs/
+    ├── specification.md             # Clinical problem description
+    ├── minutes_february_12.md       # Problem definition meeting
+    ├── minutes_march_2nd.md         # Dataset and scope meeting
+    ├── room_bookings.md             # Room allocations
+    ├── judging-criteria.md          # Friday judging sheet
+    ├── work-diary.md                # Development session notes
+    ├── digital_screen_1.jpg         # Banner image
+    ├── logo_asset_2.jpg             # Alternate banner
+    ├── mdt_list.png                 # Example MDT list format
+    ├── mdt_outcome.png              # Example MDT outcome format
+    └── prototype.png                # Example prototype output
 ```
 
 ## Next Steps
