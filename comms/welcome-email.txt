@@ -1,57 +1,45 @@
-Subject: Clinical AI Hackathon – Welcome and Getting Started (16–20 March)
+Subject: Clinical AI Hackathon – 16-20 March 2026
 
-Dear all,
+You are receiving this email because you expressed interest in taking part in the Clinical AI
+Hackathon in one or more of the following capacities: participant, mentor, judge, organiser.
 
-Welcome to the City St George's Clinical AI Hackathon! We're delighted to have you joining us
-next week.
+The Clinical AI Hackathon aims to tackle a real life problem in healthcare.
 
-The hackathon runs Monday 16 to Friday 20 March. The challenge is to build a tool that
-extracts structured patient data from NHS MDT (multidisciplinary team) Word documents into
-a searchable database format, reducing the manual burden on clinicians across the NHS.
+We will be working with a synthetic dataset that reflects the semi-structured format of medical
+notes. With the help of AI, we will code solutions to present the data in a sequence, simulating
+a time-consuming process undertaken by real life clinicians.
 
---
+The problem statement can be found in the link below, please take a moment to read it and
+familiarise yourself with the problem we are trying to solve:
 
-GETTING STARTED
+https://github.com/dsikar/clinical-ai-hackathon/
 
-Everything you need is in the GitHub repository:
+The better you understand the problem that we are trying to solve, the more likely you and your
+team are to come up with a winning solution.
 
-  https://github.com/dsikar/clinical-ai-hackathon
+Dr Wale and Dr Nicholls, plus domain expert Hitesh Patel and synthetic dataset curator Ellie
+Hickey will be available to take your questions and explain success criteria Monday 16th, from
+10:00 online:
 
-Please read the README carefully before Monday. It contains:
-  - The clinical problem statement (from Dr Anita Wale)
-  - The dataset: 50 synthetic MDT cases (Word doc) and an example output (Excel)
-  - Success criteria
-  - Technical considerations (DTAC, SaMD compliance)
+Hackathon intro chat
+Mon 16/03/2026 10:00 - 10:30
+Microsoft Teams meeting
+Join: https://teams.microsoft.com/meet/37043891575225?p=OAaSEhT8PZcOsFp4Zs
+Meeting ID: 370 438 915 752 25
+Passcode: KR2Zk2XG
 
---
+Please take the time to add the Hackathon intro chat meeting to your calendar.
 
-SCHEDULE
+We look forward to seeing you there, and thank you for your interest.
 
-Monday 16
-  10:00–10:30  Q&A with Dr Anita Wale (NHS) and Dr Alex Nicholls (MoD)
-               Microsoft Teams – join link in the README
-  Workshop room: AG04, College Building
+Kind regards
 
-Tuesday 17
-  Workshop room: AG01, College Building  09:00–17:30
+The Clinical AI Hackathon Organising Committee - Daniel, Ferheen, Isaac
 
-Wednesday 18
-  Workshop rooms: A220 (09:00–13:00), A108 (14:30–17:00), College Building
+=========================================================
 
-Thursday 19
-  Workshop rooms: A225 (09:00–12:30), BLG08 (14:00–17:30), College Building
+Clinical AI Hackathon
+City St George's, University of London
+March 16-20 2026 Clerkenwell Campus
 
-Friday 20 – Final Day  11:00–15:30
-  Opening and awards: Centenary Building HG01 (Birley) and Tait Building C322
-  Presentations: College Building (A307, AG01, AG04, A218, A108)
-
---
-
-If you have any questions before Monday, please reply to this email.
-
-We look forward to seeing what you build.
-
-Best wishes,
-
-[Your name]
-City St George's Clinical AI Hackathon Organising Team
+[logo: docs/logo_asset_2.jpg at 50% width]
