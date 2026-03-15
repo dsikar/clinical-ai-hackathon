@@ -17,7 +17,7 @@ The target remains the same:
 
 ## Current Status
 
-Two implementation attempts now exist in this directory.
+Three implementation attempts now exist in this directory.
 
 ### Gemini Attempt
 
@@ -74,6 +74,33 @@ Main remaining gaps:
 See:
 - [`reports/codex-gap-report.md`](./reports/codex-gap-report.md)
 
+### Claude Code Attempt
+
+Relevant files:
+- [`src/claude_extract_fields.py`](./src/claude_extract_fields.py)
+- [`src/pipeline_claude.py`](./src/pipeline_claude.py)
+- [`tests/test_claude_implementation.py`](./tests/test_claude_implementation.py)
+
+Improvements over Codex:
+- endoscopy date extracted from `TYPE DATE:` pattern (not only `TYPE on DATE:`)
+- histology biopsy date inferred from dated colonoscopy when findings mention cancer/biopsy
+- CT date broadened to match `CT abdomen`, `CT pelvis`, and other CT qualifiers
+- MDT decision field extracts text after "Outcome:" label when present
+
+Measured improvement over Codex:
+- Codex non-empty cells: `661`
+- Claude non-empty cells: `675`
+- `Baseline CT: Date(h)`: 19 → 27 (+8 rows)
+- `Endoscopy: date(f)`: 0 → 2 (+2 rows)
+- `Histology: Biopsy date(g)`: 0 → 1 (+1 row)
+
+Tests: 12 targeted tests pass, including regression guards from the Codex path.
+
+Main remaining gaps:
+- `Histology: Biopsy date(g)` populated for only 1 row — no recoverable evidence in the remaining 49
+- 61+ target columns still empty (chemotherapy, radiotherapy, immunotherapy, CEA, surgery, second MRI, follow-up pathway fields)
+- MDT decision normalization only applies to the 3 cases with an explicit "Outcome:" label
+
 ## Directory Layout
 
 ```text
@@ -88,20 +115,24 @@ baseline-solution/
 │   ├── gemini-gap-report.md
 │   └── codex-gap-report.md
 ├── src/
+│   ├── claude_extract_fields.py
 │   ├── codex_extract_fields.py
 │   ├── extract_fields.py
 │   ├── inspect_artifacts.py
 │   ├── load_docx.py
 │   ├── pipeline.py
+│   ├── pipeline_claude.py
 │   ├── pipeline_codex.py
 │   ├── validate_output.py
 │   └── write_excel.py
 ├── tests/
+│   ├── test_claude_implementation.py
 │   ├── test_codex_implementation.py
 │   └── test_standard_solution.py
 └── output/
-    ├── generated-database-gemini.xlsx
-    └── generated-database-codex.xlsx
+    ├── generated-database-claude.xlsx
+    ├── generated-database-codex.xlsx
+    └── generated-database-gemini.xlsx
 ```
 
 ## Prompts

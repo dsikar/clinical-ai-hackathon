@@ -455,6 +455,101 @@ Document the current gaps in the alternative Codex implementation in necessary a
 ### Entry Block Signature
 This entry was written by Codex.
 
+## Session: Claude Code Implementation
+
+**Date:** March 15, 2026
+
+### Objective
+
+Continue from the Codex implementation path, addressing the highest-priority gaps identified in
+`reports/codex-gap-report.md`: endoscopy date extraction, histology biopsy date, and CT date coverage.
+
+### Inspected
+
+- `baseline-solution/prompts/02-claude-code-handoff.md`: read and followed the full handoff.
+- `baseline-solution/reports/codex-gap-report.md` and `gemini-gap-report.md`: confirmed which gaps to target.
+- `src/codex_extract_fields.py`: read all extraction functions before writing new code.
+- `src/pipeline_codex.py` and `src/write_excel.py`: confirmed the pipeline structure to reuse.
+- `../data/hackathon-mdt-outcome-proformas.docx` (programmatically via `load_docx`): inspected
+  clinical text and outcome rows for all 50 cases to verify real patterns before writing regexes.
+
+Key findings from document inspection:
+- Endoscopy dates appear in two forms: `Flexi sig 20/10/2024:` and `Colonoscopy 01/01/2024:` —
+  date immediately after type name, before colon. The Codex pattern only handled `TYPE on DATE:`.
+- Histology biopsy date is almost never stated explicitly. Defensible inference: if a dated
+  colonoscopy/flexi-sig has findings mentioning cancer or biopsy, biopsy date = procedure date.
+- CT date pattern missed `CT abdomen on DATE:`, `CT pelvis on DATE:` and similar qualifiers —
+  8 additional cases become extractable with a broadened pattern.
+- Only 3 of 50 outcome rows contain an explicit "Outcome:" keyword — normalization is valuable
+  but limited in scope.
+
+### Changed
+
+- Added `src/claude_extract_fields.py` with the following targeted improvements:
+  - `_extract_endoscopy`: handles `TYPE DATE:` pattern (date directly after type name) in addition
+    to the existing `TYPE on DATE:` pattern, using a unified three-branch regex.
+  - `_infer_histology_date`: infers biopsy date from colonoscopy/flexi-sig date when findings
+    mention cancer/carcinoma/biopsy (defensible because biopsy is taken during the procedure).
+    Falls back to explicit biopsy-date phrasing if present. Leaves blank otherwise.
+  - `_extract_ct_fields`: broadened date pattern to match `CT abdomen`, `CT pelvis`,
+    `CT thorax`, `CT chest` with or without the `on` keyword.
+  - `_normalize_mdt_decision`: extracts text after "Outcome:" label when present to avoid mixing
+    imaging summaries into the decision field. Fallback is the full outcome text unchanged.
+  - All private helper keys (prefixed `_`) are stripped from the returned dict before the
+    pipeline writes the workbook.
+
+- Added `src/pipeline_claude.py`: runs the Claude extractor and writes
+  `output/generated-database-claude.xlsx`.
+
+- Added `tests/test_claude_implementation.py`: 12 focused tests covering:
+  - demographics (regression guard from Codex path)
+  - endoscopy date from `TYPE DATE:` pattern (cases 35, 40)
+  - endoscopy with no date remaining blank (case 0)
+  - histology biopsy date inferred from colonoscopy (case 40)
+  - biopsy date not inferred when colonoscopy has no date (case 0)
+  - CT date from `CT abdomen on DATE:` pattern (cases 18, 23, 28)
+  - MDT decision extracted after "Outcome:" keyword (case 3)
+  - simple outcome text preserved when no "Outcome:" keyword (case 4)
+
+### Verification
+
+All 12 tests pass:
+```
+Ran 12 tests in 0.177s
+OK
+```
+
+Coverage comparison (Claude vs Codex):
+- Total non-empty cells: Codex `661` → Claude `675` (+14)
+- `Endoscopy: date(f)`: 0 → 2 (+2)
+- `Endosopy type ...`: 11 → 12 (+1)
+- `Endoscopy: Findings(f)`: 11 → 12 (+1)
+- `Histology: Biopsy date(g)`: 0 → 1 (+1)
+- `Baseline CT: Date(h)`: 19 → 27 (+8)
+- `Baseline CT: T(h)`: 20 → 21 (+1)
+
+Best normalized match against the prototype row is 7/12 (same as Codex when measured with strict
+string equality). The previous report of 10/12 used a different normalization; the apparent
+discrepancy is due to format mismatches (DOB stored as Excel datetime, MRN/NHS as float) rather
+than extraction regressions. The extracted values are correct.
+
+### Remaining Gaps (inherited from Codex)
+
+- `Histology: Biopsy date(g)` only populated for 1 row (case 40); the remaining 49 rows have no
+  recoverable evidence for this field in the source text.
+- 61+ target columns remain empty (chemotherapy, immunotherapy, radiotherapy, CEA, surgery,
+  second MRI, 12-week MRI, watch-and-wait follow-up).
+- CT staging coverage could still improve with multi-segment evidence combination.
+- MDT decision normalization only applies to the 3 cases with an explicit "Outcome:" label.
+
+### Prompt Followed
+
+`baseline-solution/prompts/02-claude-code-handoff.md`
+
+### Entry Block Signature
+
+This entry was written by Claude Code.
+
 ## Session: Alternative Codex Implementation
 
 **Date:** March 15, 2026
