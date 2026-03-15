@@ -85,7 +85,7 @@ Please take the time to add the Hackathon intro chat meeting to your calendar.
 
 ## Workshops Tuesday 17 - Thursday 19
 
-All rooms in College Building.
+All rooms in College Building. To attend online, use the [Activities Meeting Link](#activities-meeting-link).
 
 **Tuesday 17 — AI Agents**
 - AG01 — 09:00–17:30  
