@@ -134,3 +134,34 @@ clinical-ai-hackathon/
 
 ## Status
 Repository ready for mass email distribution to 106 hackathon participants.
+
+---
+
+# Work Diary - Pre-Hackathon Preparation Session
+**Date:** March 15, 2026
+
+## Session Objective
+Finalise repository content and communications materials ahead of the hackathon starting Monday 16 March.
+
+## Changes Made
+
+### README.md
+- Added detailed workshop schedule (Tuesday–Thursday) with daily themes: AI Agents, Coding with LLM APIs, Documentation and Allnighter
+- Added allnighter details: ELG08 Study Area, 23:00–09:00, Monster + Pizza
+- Expanded Friday schedule with room-by-room breakdown and times
+- Added Activities Meeting Link section (Teams loop for all online attendees)
+- Added inline link to Activities Meeting Link from Workshops section
+- Updated Current Repository Structure to reflect actual state
+- Added authorship note (Daniel Sikar and Claude Code)
+- Resolved merge conflict with upstream changes (updated Q&A attendees: Hitesh Patel, Ellie Hickey)
+
+### comms/ (new directory)
+- `welcome-email.txt` — draft welcome email for 106 participants
+- `mc-script-maeve.md` — MC script for Maeve Hutchinson, opening and closing ceremonies
+- `recipients.txt` — gitignored recipient list template
+
+### docs/
+- `judging-criteria.md` — Friday judging sheet for clinician judges, with scoring rubric (1–4) and team table
+
+### .gitignore
+- Added to exclude `comms/recipients.txt` from version control

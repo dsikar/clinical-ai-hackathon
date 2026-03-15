@@ -146,3 +146,7 @@ Meeting ID:
 Passcode:
 Y4hu3WK2
 ```
+
+---
+
+*This document was written by [Daniel Sikar](https://github.com/dsikar) with [Claude Code](https://claude.ai/claude-code).*
