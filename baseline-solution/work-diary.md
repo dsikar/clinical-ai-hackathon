@@ -455,6 +455,68 @@ Document the current gaps in the alternative Codex implementation in necessary a
 ### Entry Block Signature
 This entry was written by Codex.
 
+## Session: Domain Research and Colorectal Cancer Primer
+
+**Date:** March 15, 2026
+
+### Objective
+
+Write a deep-research prompt for online AI agents, consolidate the resulting reports into a
+participant-facing domain orientation document, and write an architecture prompt for the
+two-stage parser redesign.
+
+### Inspected
+
+- `reports/deep-research-grok.md`: full markdown report from Grok covering all 8 sections.
+- `reports/deep-research-gemini.docx`: full academic report from Gemini, extracted via
+  python-docx; best on anatomy (embryological detail, blood supply) and clinical references.
+- `reports/deep-research-claude.docx`: full UK/NHS-focused report from Claude.ai, extracted
+  via python-docx; most complete glossary (~100 terms), best clinical pathway walkthroughs,
+  best on TNM prefixes, mrTRG, ypT/ypN, R0/R1/R2, Watch and Wait criteria.
+
+### Changed
+
+- Added `prompts/03-deep-research-prompt.md`: 8-section deep research prompt designed to be
+  given verbatim to online agents (ChatGPT, Claude.ai, Grok). Specifies output format, required
+  sections, glossary terms, and instructions for saving reports locally and handing back to
+  Claude Code for consolidation.
+
+- Added `prompts/05-two-stage-parser-prompt.md`: full architecture specification for a
+  two-stage `.docx → .json → verified .json → .xlsx` pipeline. Captures four design decisions:
+  parser-only Stage 1 (no LLM calls, data governance); no cell colour changes; human-verification
+  flag column appended after clinical columns; inferred/default fields included but always
+  flagged. Includes JSON schema, verification rules by method type, field mapping dict,
+  flag column specification, required tests, and implementation order.
+
+- Added `reports/deep-research-grok.md`, `reports/deep-research-gemini.docx`,
+  `reports/deep-research-claude.docx`: source reports from three online agents.
+
+- Added `reports/colorectal-cancer-primer.md`: consolidated participant orientation document
+  synthesised from all three reports. Sections: anatomy, detection, staging, imaging, MDT
+  process, treatment pathways, four clinical pathway walkthroughs, ~100-term glossary.
+  Key content taken from each source:
+  - Grok: accessible prose, BCSP detail, CEA normal range
+  - Gemini: anatomy (embryological origin, blood supply), academic references, mrTRG
+  - Claude.ai: UK/NHS focus, complete glossary (mrTRG, ypT/ypN, R0/R1/R2, cCR, FLR, SSL,
+    DWI, TRG, RECIST), full clinical scenarios, Watch and Wait surveillance protocol
+
+### Why
+
+- Hackathon participants with no clinical background need enough domain vocabulary to
+  understand the MDT proforma fields, interpret what clinicians say in the outcome column,
+  and ask useful questions during the event.
+- The primer is self-contained and readable in ~45 minutes.
+- The `05-` prompt captures the two-stage parser architecture before implementation begins,
+  so no design decisions need to be re-derived by the next agent.
+
+### Prompt Followed
+
+Direct user instruction.
+
+### Entry Block Signature
+
+This entry was written by Claude Code.
+
 ## Session: Claude Code Implementation
 
 **Date:** March 15, 2026
