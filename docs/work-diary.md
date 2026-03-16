@@ -170,3 +170,21 @@ Finalise repository content and communications materials ahead of the hackathon 
 - Added Credits section to end of README.md
 - Clinical problem statement credited to Dr Anita Wale (linked to St George's profile)
 - Repository credited to Daniel Sikar with Claude Code, OpenAI Codex and Google Gemini
+
+---
+
+# Work Diary - Hackathon Day 1
+**Date:** March 16, 2026
+
+## Changes Made
+
+### TODO.md (new file)
+- Created at root with 24 items covering: standard solution, judging criteria, community website, MC notes, DeepInfra credits, timetabling, catering, judge emails, daily comms emails, AV booking, Gemini sign-up, repo policy, scoring rubrics, team assignment, merchandise, prizes scripts (Syed, Boh, Golnaz, Chris/Sanowar)
+
+### README.md
+- Updated repository structure section to reflect baseline-solution/ directory and TODO.md
+- Added Baseline Solution section before Workshops
+- Updated image subheadings to "Example MDT Outcome (Input - Word document)" and "Example Prototype (Output - Excel spreadsheet)"
+
+### Workflow note
+- Agreed convention: one instruction at a time to avoid misreads and ensure exact wording is applied
