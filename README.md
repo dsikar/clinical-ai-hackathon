@@ -36,7 +36,7 @@ Across the NHS there are researchers laboriously looking through notes to find o
 ### Example MDT Outcome (Input - Word document)
 ![MDT Outcome](docs/mdt_outcome.png)
 
-### Example Prototype Output (Excel spreadsheet)
+### Example Prototype (Output - Excel spreadsheet)
 ![Prototype](docs/prototype.png)
 
 ## Success Criteria
