@@ -33,10 +33,10 @@ Across the NHS there are researchers laboriously looking through notes to find o
 - Where information is missing or not discussed, cells are left null (empty)
 - Serves as the "ground truth" or expected output
 
-### Example MDT Outcome (Input)
+### Example MDT Outcome (Input - Word document)
 ![MDT Outcome](docs/mdt_outcome.png)
 
-### Example Prototype Output (Excel)
+### Example Prototype Output (Excel spreadsheet)
 ![Prototype](docs/prototype.png)
 
 ## Success Criteria
@@ -109,6 +109,10 @@ Meeting ID: 370 438 915 752 25
 Passcode: KR2Zk2XG 
 ```
 Please take the time to add the Hackathon intro chat meeting to your calendar.
+
+## Baseline Solution
+
+A working starting point is provided in [`baseline-solution/`](baseline-solution/). We will look at this and other possibilities, starting Tuesday 17.
 
 ## Workshops Tuesday 17 - Thursday 19
 
