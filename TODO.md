@@ -24,3 +24,5 @@
 | 20 | Collect merchandise | Isaac | Medium | Not Started | To be collected from Asif and Gavin |
 | 21 | Syed internship prizes script | Syed/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
 | 22 | Boh prizes script | Boh/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
+| 23 | Golnaz prizes script | Golnaz/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
+| 24 | Chris and Sanowar prizes script | Chris/Sanowar/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
