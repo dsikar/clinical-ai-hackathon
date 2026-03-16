@@ -22,3 +22,4 @@
 | 18 | Print scoring rubrics | Isaac | Medium | Not Started | Complete by Friday 09:00 — team number and names dependency |
 | 19 | Assign participants to teams | Daniel | High | Not Started | Complete by Monday evening/night |
 | 20 | Collect merchandise | Isaac | Medium | Not Started | To be collected from Asif and Gavin |
+| 21 | Syed internship prizes script | Syed/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
