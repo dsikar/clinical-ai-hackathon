@@ -23,3 +23,4 @@
 | 19 | Assign participants to teams | Daniel | High | Not Started | Complete by Monday evening/night |
 | 20 | Collect merchandise | Isaac | Medium | Not Started | To be collected from Asif and Gavin |
 | 21 | Syed internship prizes script | Syed/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
+| 22 | Boh prizes script | Boh/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
