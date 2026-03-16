@@ -19,6 +19,12 @@ The target remains the same:
 
 Three implementation attempts now exist in this directory.
 
+## Output Workbooks
+
+- [`output/generated-database-gemini.xlsx`](./output/generated-database-gemini.xlsx)
+- [`output/generated-database-codex.xlsx`](./output/generated-database-codex.xlsx)
+- [`output/generated-database-claude.xlsx`](./output/generated-database-claude.xlsx)
+
 ### Gemini Attempt
 
 Gemini produced an initial working pipeline and workbook export.
