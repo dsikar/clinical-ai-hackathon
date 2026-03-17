@@ -9,7 +9,7 @@ Multidisciplinary Team Meetings (MDTs) are critical for cancer treatment plannin
 The following experts will evaluate the hackathon outcomes:
 - **[Dr. Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/)**: Consultant Radiologist and Clinical Academic at St George’s University Hospitals NHS Foundation Trust.
 - **[Dr. Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38)**: Ministry of Defence.
-- **Hitesh Patel**: Superintendent Radiographer and Radiology IT Systems (RITS) Manager at St George’s University Hospitals NHS Foundation Trust.
+- **[Hitesh Patel](https://uk.linkedin.com/in/hitesh-patel-68ab0223a)**: Superintendent Radiographer and Radiology IT Systems (RITS) Manager at St George’s University Hospitals NHS Foundation Trust.
 
 ## 3. Dataset and Objectives
 - **Input:** `data/hackathon-mdt-outcome-proformas.docx` (50 synthetic, anonymized MDT cases).
