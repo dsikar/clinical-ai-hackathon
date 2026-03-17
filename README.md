@@ -43,6 +43,12 @@ Across the NHS there are researchers laboriously looking through notes to find o
 
 Longitudinal patient data presented in Excel reflects patient history contained in Word document.
 
+## Judge Panel
+
+- **[Dr. Anita Wale](https://www.linkedin.com/search/results/all/?keywords=Dr.%20Anita%20Wale%20St%20George%27s%20NHS%20Trust)**: Consultant Radiologist and Clinical Academic at St George’s University Hospitals NHS Foundation Trust.
+- **[Dr. Alex Nicholls](https://www.linkedin.com/search/results/all/?keywords=Alex%20Nicholls%20Ministry%20of%20Defence)**: Ministry of Defence.
+- **[Hitesh Patel](https://www.linkedin.com/search/results/all/?keywords=Hitesh%20Patel%20St%20George%27s%20Radiology)**: Superintendent Radiographer and Radiology IT Systems (RITS) Manager at St George’s University Hospitals NHS Foundation Trust.
+
 ## Technical Considerations - to be further discussed by Dr Alex Nicholls
 
 - **Technical Standards (DTAC)**: Software developed should ideally align with [Digital Technology Assessment Criteria (DTAC)](https://www.digitalregulations.innovation.nhs.uk/regulations-and-guidance-for-developers/all-developers-guidance/using-the-digital-technology-assessment-criteria-dtac/), specifically regarding clinical safety (DCB0129/DCB0160) and data residency.
