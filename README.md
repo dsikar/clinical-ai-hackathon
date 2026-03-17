@@ -110,6 +110,10 @@ Passcode: KR2Zk2XG
 ```
 Please take the time to add the Hackathon intro chat meeting to your calendar.
 
+## Join the Discord
+
+[https://discord.gg/tDp3wpTF](https://discord.gg/tDp3wpTF)
+
 ## Baseline Solution
 
 A working starting point is provided in [`baseline-solution/`](baseline-solution/). We will look at this and other possibilities, starting Tuesday 17.
