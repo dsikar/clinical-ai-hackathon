@@ -150,15 +150,19 @@ Join any time to fine tune your work, or start from scratch.
 
 ## Final Friday 20
 
-**Grand Opening** — Centenary Building HG01 (Birley) — 09:00–11:30
+**Opening Ceremony** — Centenary Building HG01 (Birley) — 10:00–10:30
 
-**Presentations** — College Building — 11:00–14:30
+**Presentations** — College Building — 10:30–13:30
 - A307
 - AG01
 - AG04
-- A218 (until 14:00 then A108)
+- A218
 
-**Awards** — Tait Building C322 — 14:00–15:30
+**Lunch** — Canteen — 13:30–14:00
+
+**Deliberation** — Tait Building C322 — 14:00–14:30
+
+**Closing Ceremony** — Tait Building C322 — 14:30–15:00
 
 ## Activities Meeting Link
 

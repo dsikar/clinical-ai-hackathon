@@ -26,3 +26,4 @@
 | 22 | Boh prizes script | Boh/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
 | 23 | Golnaz prizes script | Golnaz/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
 | 24 | Chris and Sanowar prizes script | Chris/Sanowar/Daniel | Medium | Not Started | To be ready by Friday 14:00 |
+| 25 | Visitor passes | Isaac | Urgent | Not Started | Gabrielle To should be able to help |
