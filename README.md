@@ -45,7 +45,7 @@ Longitudinal patient data presented in Excel reflects patient history contained 
 
 ## Judge Panel
 
-- **[Dr. Anita Wale](https://www.linkedin.com/search/results/all/?keywords=Dr.%20Anita%20Wale%20St%20George%27s%20NHS%20Trust)**: Consultant Radiologist and Clinical Academic at St George’s University Hospitals NHS Foundation Trust.
+- **[Dr. Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/)**: Consultant Radiologist and Clinical Academic at St George’s University Hospitals NHS Foundation Trust.
 - **[Dr. Alex Nicholls](https://www.linkedin.com/search/results/all/?keywords=Alex%20Nicholls%20Ministry%20of%20Defence)**: Ministry of Defence.
 - **[Hitesh Patel](https://www.linkedin.com/search/results/all/?keywords=Hitesh%20Patel%20St%20George%27s%20Radiology)**: Superintendent Radiographer and Radiology IT Systems (RITS) Manager at St George’s University Hospitals NHS Foundation Trust.
 
