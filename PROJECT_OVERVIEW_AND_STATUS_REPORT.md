@@ -8,7 +8,7 @@ Multidisciplinary Team Meetings (MDTs) are critical for cancer treatment plannin
 ## 2. Judge Panel
 The following experts will evaluate the hackathon outcomes:
 - **[Dr. Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/)**: Consultant Radiologist and Clinical Academic at St George’s University Hospitals NHS Foundation Trust.
-- **Dr. Alex Nicholls**: Ministry of Defence.
+- **[Dr. Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38)**: Ministry of Defence.
 - **Hitesh Patel**: Superintendent Radiographer and Radiology IT Systems (RITS) Manager at St George’s University Hospitals NHS Foundation Trust.
 
 ## 3. Dataset and Objectives
