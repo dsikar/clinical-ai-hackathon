@@ -49,6 +49,10 @@ Longitudinal patient data presented in Excel reflects patient history contained 
 - **[Dr. Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38)**: Ministry of Defence.
 - **[Hitesh Patel](https://uk.linkedin.com/in/hitesh-patel-68ab0223a)**: Superintendent Radiographer and Radiology IT Systems (RITS) Manager at St George’s University Hospitals NHS Foundation Trust.
 
+## Master of Ceremonies
+
+- **[Dr. Dave Muir](https://uk.linkedin.com/in/dr-dave-d-muir-883b3b39)**: Lecturer Eng. Systems (AI-Automation, Electrical & STEM), Prog. Director Renewable Energy & Power Sys. Man. MSc., Dept of Engineering, School of Science & Technology, University Sustainability Operations Lead, Co-Chair Network for Racial Justice, City St George's University of London.
+
 ## Technical Considerations - to be further discussed by Dr Alex Nicholls
 
 - **Technical Standards (DTAC)**: Software developed should ideally align with [Digital Technology Assessment Criteria (DTAC)](https://www.digitalregulations.innovation.nhs.uk/regulations-and-guidance-for-developers/all-developers-guidance/using-the-digital-technology-assessment-criteria-dtac/), specifically regarding clinical safety (DCB0129/DCB0160) and data residency.
