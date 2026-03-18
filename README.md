@@ -53,11 +53,15 @@ Longitudinal patient data presented in Excel reflects patient history contained 
 
 - **[Dr. Dave Muir](https://uk.linkedin.com/in/dr-dave-d-muir-883b3b39)**: Lecturer Eng. Systems (AI-Automation, Electrical & STEM), Prog. Director Renewable Energy & Power Sys. Man. MSc., Dept of Engineering, School of Science & Technology, University Sustainability Operations Lead, Co-Chair Network for Racial Justice, City St George's University of London.
 
-## Technical Considerations - to be further discussed by Dr Alex Nicholls
+## Technical Considerations — by Dr Alex Nicholls, MOD
 
 - **Technical Standards (DTAC)**: Software developed should ideally align with [Digital Technology Assessment Criteria (DTAC)](https://www.digitalregulations.innovation.nhs.uk/regulations-and-guidance-for-developers/all-developers-guidance/using-the-digital-technology-assessment-criteria-dtac/), specifically regarding clinical safety (DCB0129/DCB0160) and data residency.
 
 - **Medical Device Compliance**: Depending on the level of risk and clinical decision support, the software could be classified as a Software as a Medical Device (SaMD), requiring specific regulatory adherence.
+
+- **HL7 FHIR**: FHIR (Fast Healthcare Interoperability Resources) is a modern, open-source standards framework developed by Health Level 7 for secure, efficient exchange of electronic health data via RESTful APIs (HTTP) and formats like JSON or XML. Key aspects: *Resources* — basic building blocks representing clinical and administrative data (e.g., Patient, Observation, Medication); *API-First Design* — modern web technology making integration faster than previous standards; *Extensibility* — designed to meet 80% of common use cases, with flexibility for local requirements via profiling.
+
+- **SNOMED CT**: Provides a comprehensive set of codes for tumour morphology (type), topography (site), staging and grading, aligning with international standards such as TNM Classification. Used in pathology reports to identify, classify, and stage tumours in Electronic Health Records (EHRs).
 
 ## Current Repository Structure
 
