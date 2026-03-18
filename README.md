@@ -207,4 +207,6 @@ Y4hu3WK2
 
 Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/).
 
+Technical considerations by [Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38), Ministry of Defence.
+
 Repository created by [Daniel Sikar](https://github.com/dsikar) with [Claude Code](https://code.claude.com/docs/en/overview), [OpenAI Codex](https://openai.com/codex/) and [Google Gemini](https://geminicli.com/).
