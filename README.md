@@ -138,8 +138,18 @@ All rooms in College Building. To attend online, use the [Activities Meeting Lin
 1h in person and online sessions, starting on the hour, every hour, join anytime that suits.
 
 **Wednesday 18 — Coding with LLM APIs**
-- A220 — 09:00–13:00 
-- A108 — 14:30–17:00
+
+- **10:00–11:00** — A220 and Online
+  **Blazej Barski** — *Building with AI Coding - From a non-coder perspective*
+  Blazej built a chrome extension purely by prompting, and the results I am sure will inspire you.
+
+- **14:00–15:00** — A220 (14:00–14:30) then A108 (14:30–15:00) and Online
+  **Syed Mahbubul Huq** — *Coding with LLM APIs using Python and Google Colab*
+  Syed will demonstrate how to send prompts to LLMs programatically, by using Python scripts running on the Google Colab Platform.
+
+- **17:00–18:00** — A108 and Online
+  **Daniel Sikar** — *Coding with LLM APIs using Python*
+  We will continue with our use of AI Agents to help us write code, this time using LLM APIs.
 
 **Thursday 19 — Documentation and Allnighter** *(late joiners welcome)*
 - A225 — 09:00–12:30
