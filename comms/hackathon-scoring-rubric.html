@@ -14,7 +14,14 @@
     background: #fff;
     width: 210mm;
     margin: 0 auto;
+  }
+
+  .sheet {
     padding: 15mm;
+    page-break-after: always;
+  }
+  .sheet:last-child {
+    page-break-after: avoid;
   }
 
   /* ── Header ── */
@@ -55,6 +62,12 @@
     width: 120px;
     border-bottom: 1px solid #333;
     height: 16px;
+  }
+  .judge-name {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #1a3a5c;
+    padding-bottom: 1px;
   }
 
   /* ── Scale reference box ── */
@@ -212,12 +225,16 @@
   @media print {
     @page {
       size: A4 portrait;
-      margin: 15mm;
+      margin: 0;
     }
     body {
       width: 210mm;
       margin: 0;
-      padding: 0;
+    }
+    .sheet {
+      padding: 15mm;
+      width: 210mm;
+      min-height: 297mm;
     }
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -226,14 +243,17 @@
 </head>
 <body>
 
-  <!-- 1. Header -->
+<!-- ═══════════════════════════════════════════════════
+     SHEET 1 — Dr. Alex Nicholls (AN)
+════════════════════════════════════════════════════ -->
+<div class="sheet">
   <div class="header">
     <div class="event-name">Clinical AI Hackathon</div>
     <h1>Judge Scoring Sheet</h1>
     <div class="header-fields">
       <div class="header-field">
         <label>Judge:</label>
-        <div class="underline"></div>
+        <span class="judge-name">Dr. Alex Nicholls (AN)</span>
       </div>
       <div class="header-field">
         <label>Date:</label>
@@ -242,7 +262,6 @@
     </div>
   </div>
 
-  <!-- 2. Scoring Scale Reference Box -->
   <div class="scale-box">
     <h2>Scoring Scale Reference</h2>
     <table class="scale-table">
@@ -279,7 +298,6 @@
     </p>
   </div>
 
-  <!-- 3. Scoring Table -->
   <div class="section-title">Team Scores</div>
   <table class="scoring-table">
     <thead>
@@ -293,92 +311,201 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="team-cell">1</td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="total-cell"></td>
-        <td class="notes-cell"></td>
-      </tr>
-      <tr>
-        <td class="team-cell">2</td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="total-cell"></td>
-        <td class="notes-cell"></td>
-      </tr>
-      <tr>
-        <td class="team-cell">3</td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="total-cell"></td>
-        <td class="notes-cell"></td>
-      </tr>
-      <tr>
-        <td class="team-cell">4</td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="total-cell"></td>
-        <td class="notes-cell"></td>
-      </tr>
-      <tr>
-        <td class="team-cell">5</td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="total-cell"></td>
-        <td class="notes-cell"></td>
-      </tr>
-      <tr>
-        <td class="team-cell">6</td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="score-cell"></td>
-        <td class="total-cell"></td>
-        <td class="notes-cell"></td>
-      </tr>
+      <tr><td class="team-cell">1</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">2</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">3</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">4</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">5</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">6</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
     </tbody>
   </table>
 
-  <!-- 4. Prize Category Summary -->
   <div class="section-title">Prize Category — Recommended Winners</div>
   <div class="prize-summary">
-    <div class="prize-box">
-      <div class="prize-title">Best Documentation</div>
-      <div class="winner-line">
-        <label>Winner:</label>
-        <div class="underline"></div>
+    <div class="prize-box"><div class="prize-title">Best Documentation</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box"><div class="prize-title">Best Presentation</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box"><div class="prize-title">Best Code</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box" style="border-color: #7a3b00;"><div class="prize-title" style="color: #7a3b00;">Overall Winner</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+  </div>
+
+  <div class="footer">Clinical AI Hackathon — Confidential judge scoring sheet</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     SHEET 2 — Dr. Anita Wale (AW)
+════════════════════════════════════════════════════ -->
+<div class="sheet">
+  <div class="header">
+    <div class="event-name">Clinical AI Hackathon</div>
+    <h1>Judge Scoring Sheet</h1>
+    <div class="header-fields">
+      <div class="header-field">
+        <label>Judge:</label>
+        <span class="judge-name">Dr. Anita Wale (AW)</span>
       </div>
-    </div>
-    <div class="prize-box">
-      <div class="prize-title">Best Presentation</div>
-      <div class="winner-line">
-        <label>Winner:</label>
-        <div class="underline"></div>
-      </div>
-    </div>
-    <div class="prize-box">
-      <div class="prize-title">Best Code</div>
-      <div class="winner-line">
-        <label>Winner:</label>
-        <div class="underline"></div>
-      </div>
-    </div>
-    <div class="prize-box" style="border-color: #7a3b00;">
-      <div class="prize-title" style="color: #7a3b00;">Overall Winner</div>
-      <div class="winner-line">
-        <label>Winner:</label>
+      <div class="header-field">
+        <label>Date:</label>
         <div class="underline"></div>
       </div>
     </div>
   </div>
 
-  <!-- 5. Footer -->
+  <div class="scale-box">
+    <h2>Scoring Scale Reference</h2>
+    <table class="scale-table">
+      <thead>
+        <tr>
+          <th style="width:40px; text-align:center;">Score</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="score-cell">1</td>
+          <td>Not all core requirements implemented — major gaps; does not fully solve the task</td>
+        </tr>
+        <tr>
+          <td class="score-cell">2</td>
+          <td>All core requirements implemented — works end-to-end, accurate/useful Excel output, solid level</td>
+        </tr>
+        <tr>
+          <td class="score-cell">3</td>
+          <td>Surpassed expectations — noticeably better: clever features, polish, real-world ready</td>
+        </tr>
+        <tr>
+          <td class="score-cell">4</td>
+          <td>Blew my mind — exceptional: innovative, clinically transformative, wow factor</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="score-4-note">
+      <strong>Guidance for score 4:</strong> Use sparingly for projects that genuinely surprise or impress — e.g., unusually
+      accurate/safe extraction on tricky real-world cases, smart clinician-friendly additions (confidence flags, summaries),
+      elegant handling of edge cases, or clear potential to save serious time/errors in NHS/MoD workflows.
+      It should feel like <em>"this could actually change how we work"</em>.
+    </p>
+  </div>
+
+  <div class="section-title">Team Scores</div>
+  <table class="scoring-table">
+    <thead>
+      <tr>
+        <th class="team-col">Team # / Name</th>
+        <th>Documentation<br>(1–4)</th>
+        <th>Presentation<br>(1–4)</th>
+        <th>Code<br>(1–4)</th>
+        <th>Total<br>(3–12)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="team-cell">1</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">2</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">3</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">4</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">5</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">6</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Prize Category — Recommended Winners</div>
+  <div class="prize-summary">
+    <div class="prize-box"><div class="prize-title">Best Documentation</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box"><div class="prize-title">Best Presentation</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box"><div class="prize-title">Best Code</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box" style="border-color: #7a3b00;"><div class="prize-title" style="color: #7a3b00;">Overall Winner</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+  </div>
+
   <div class="footer">Clinical AI Hackathon — Confidential judge scoring sheet</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     SHEET 3 — Hitesh Patel (HP)
+════════════════════════════════════════════════════ -->
+<div class="sheet">
+  <div class="header">
+    <div class="event-name">Clinical AI Hackathon</div>
+    <h1>Judge Scoring Sheet</h1>
+    <div class="header-fields">
+      <div class="header-field">
+        <label>Judge:</label>
+        <span class="judge-name">Hitesh Patel (HP)</span>
+      </div>
+      <div class="header-field">
+        <label>Date:</label>
+        <div class="underline"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scale-box">
+    <h2>Scoring Scale Reference</h2>
+    <table class="scale-table">
+      <thead>
+        <tr>
+          <th style="width:40px; text-align:center;">Score</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="score-cell">1</td>
+          <td>Not all core requirements implemented — major gaps; does not fully solve the task</td>
+        </tr>
+        <tr>
+          <td class="score-cell">2</td>
+          <td>All core requirements implemented — works end-to-end, accurate/useful Excel output, solid level</td>
+        </tr>
+        <tr>
+          <td class="score-cell">3</td>
+          <td>Surpassed expectations — noticeably better: clever features, polish, real-world ready</td>
+        </tr>
+        <tr>
+          <td class="score-cell">4</td>
+          <td>Blew my mind — exceptional: innovative, clinically transformative, wow factor</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="score-4-note">
+      <strong>Guidance for score 4:</strong> Use sparingly for projects that genuinely surprise or impress — e.g., unusually
+      accurate/safe extraction on tricky real-world cases, smart clinician-friendly additions (confidence flags, summaries),
+      elegant handling of edge cases, or clear potential to save serious time/errors in NHS/MoD workflows.
+      It should feel like <em>"this could actually change how we work"</em>.
+    </p>
+  </div>
+
+  <div class="section-title">Team Scores</div>
+  <table class="scoring-table">
+    <thead>
+      <tr>
+        <th class="team-col">Team # / Name</th>
+        <th>Documentation<br>(1–4)</th>
+        <th>Presentation<br>(1–4)</th>
+        <th>Code<br>(1–4)</th>
+        <th>Total<br>(3–12)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="team-cell">1</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">2</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">3</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">4</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">5</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+      <tr><td class="team-cell">6</td><td class="score-cell"></td><td class="score-cell"></td><td class="score-cell"></td><td class="total-cell"></td><td class="notes-cell"></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Prize Category — Recommended Winners</div>
+  <div class="prize-summary">
+    <div class="prize-box"><div class="prize-title">Best Documentation</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box"><div class="prize-title">Best Presentation</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box"><div class="prize-title">Best Code</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+    <div class="prize-box" style="border-color: #7a3b00;"><div class="prize-title" style="color: #7a3b00;">Overall Winner</div><div class="winner-line"><label>Winner:</label><div class="underline"></div></div></div>
+  </div>
+
+  <div class="footer">Clinical AI Hackathon — Confidential judge scoring sheet</div>
+</div>
 
 </body>
 </html>
