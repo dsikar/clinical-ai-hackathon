@@ -9,14 +9,36 @@ export default function HomePage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [state, setState] = useState<ProcessingState>("idle");
   const [downloadUrl, setDownloadUrl] = useState<string>("");
-  const [message, setMessage] = useState<string>("Upload an MDT Word document to begin.");
+  const [message, setMessage] = useState<string>(
+    "Upload an MDT Word document to begin.",
+  );
 
-  const handleFileChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    setSelectedFile(file ?? null);
-    setMessage(file ? `Ready to upload: ${file.name}` : "Upload an MDT Word document to begin.");
-    setState("idle");
+  const handleFileChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      setSelectedFile(file ?? null);
+      setMessage(
+        file
+          ? `Ready to upload: ${file.name}`
+          : "Upload an MDT Word document to begin.",
+      );
+      setState("idle");
+      setDownloadUrl("");
+    },
+    [],
+  );
+
+  const handleClear = useCallback(() => {
+    setSelectedFile(null);
     setDownloadUrl("");
+    setState("idle");
+    setMessage("Upload an MDT Word document to begin.");
+    const input = document.getElementById(
+      "file-input",
+    ) as HTMLInputElement | null;
+    if (input) {
+      input.value = "";
+    }
   }, []);
 
   const handleUpload = useCallback(async () => {
@@ -36,10 +58,10 @@ export default function HomePage() {
       setState("processing");
       setMessage("Processing MDT tables…");
 
-      console.log('api url : ', apiBase);
+      console.log("api url : ", apiBase);
       const response = await fetch(`${apiBase}/extract`, {
         method: "POST",
-        body: formData
+        body: formData,
       });
 
       if (!response.ok) {
@@ -55,7 +77,11 @@ export default function HomePage() {
     } catch (error) {
       console.error(error);
       setState("error");
-      setMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
     }
   }, [selectedFile]);
 
@@ -73,12 +99,19 @@ export default function HomePage() {
     <main style={styles.main}>
       <section style={styles.card}>
         <div style={styles.logoWrapper}>
-          <Image src="/assets/nhs2.jpg" alt="NHS Logo" width={120} height={48} priority />
+          <Image
+            src="/assets/nhs2.jpg"
+            alt="NHS Logo"
+            width={120}
+            height={48}
+            priority
+          />
         </div>
         <h1 style={styles.heading}>Clinical AI MDT Extractor</h1>
         <p style={styles.subheading}>
-          Upload the MDT outcome Word document to generate a prototype Excel database. The backend Python pipeline
-          will parse tables, extract staging, and return a styled workbook.
+          Upload the MDT outcome Word document to generate a prototype Excel
+          database. The backend Python pipeline will parse tables, extract
+          staging, and return a styled workbook.
         </p>
 
         <label htmlFor="file-input" style={styles.fileLabel}>
@@ -89,11 +122,31 @@ export default function HomePage() {
             onChange={handleFileChange}
             style={styles.fileInput}
           />
-          <span>{selectedFile ? selectedFile.name : "Choose MDT .docx file"}</span>
+          <span>
+            {selectedFile ? selectedFile.name : "Choose MDT .docx file"}
+          </span>
         </label>
 
-        <button type="button" onClick={handleUpload} style={styles.primaryButton} disabled={state === "uploading" || state === "processing"}>
-          {state === "uploading" ? "Uploading…" : state === "processing" ? "Processing…" : "Generate Workbook"}
+        <button
+          type="button"
+          onClick={handleUpload}
+          style={styles.primaryButton}
+          disabled={state === "uploading" || state === "processing"}
+        >
+          {state === "uploading"
+            ? "Uploading…"
+            : state === "processing"
+              ? "Processing…"
+              : "Generate Workbook"}
+        </button>
+
+        <button
+          type="button"
+          onClick={handleClear}
+          style={{ ...styles.secondaryButton, marginTop: "0.75rem" }}
+          disabled={!selectedFile}
+        >
+          Clear Selection
         </button>
 
         <p style={styles.statusMessage}>{message}</p>
@@ -104,7 +157,7 @@ export default function HomePage() {
           style={{
             ...styles.secondaryButton,
             opacity: downloadUrl ? 1 : 0.4,
-            cursor: downloadUrl ? "pointer" : "not-allowed"
+            cursor: downloadUrl ? "pointer" : "not-allowed",
           }}
           disabled={!downloadUrl}
         >
@@ -121,7 +174,7 @@ const styles: Record<string, React.CSSProperties> = {
     minHeight: "100vh",
     alignItems: "center",
     justifyContent: "center",
-    padding: "2rem"
+    padding: "2rem",
   },
   card: {
     width: "100%",
@@ -130,23 +183,23 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: "1.25rem",
     padding: "2.5rem",
     boxShadow: "0 25px 60px rgba(15, 23, 42, 0.15)",
-    border: "1px solid rgba(99, 102, 241, 0.2)"
+    border: "1px solid rgba(99, 102, 241, 0.2)",
   },
   logoWrapper: {
     display: "flex",
     justifyContent: "center",
-    marginBottom: "1.5rem"
+    marginBottom: "1.5rem",
   },
   heading: {
     margin: 0,
     fontSize: "2rem",
-    color: "#1f2937"
+    color: "#1f2937",
   },
   subheading: {
     marginTop: "0.75rem",
     marginBottom: "1.5rem",
     color: "#4b5563",
-    lineHeight: 1.5
+    lineHeight: 1.5,
   },
   fileLabel: {
     display: "block",
@@ -159,10 +212,10 @@ const styles: Record<string, React.CSSProperties> = {
     cursor: "pointer",
     color: "#4f46e5",
     fontWeight: 600,
-    backgroundColor: "#f5f3ff"
+    backgroundColor: "#f5f3ff",
   },
   fileInput: {
-    display: "none"
+    display: "none",
   },
   primaryButton: {
     width: "100%",
@@ -173,7 +226,7 @@ const styles: Record<string, React.CSSProperties> = {
     border: "none",
     backgroundColor: "#4f46e5",
     color: "#ffffff",
-    cursor: "pointer"
+    cursor: "pointer",
   },
   secondaryButton: {
     marginTop: "1.5rem",
@@ -184,11 +237,11 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: "0.75rem",
     border: "1px solid #d1d5db",
     backgroundColor: "#f9fafb",
-    color: "#374151"
+    color: "#374151",
   },
   statusMessage: {
     marginTop: "1rem",
     color: "#374151",
-    minHeight: "1.5rem"
-  }
+    minHeight: "1.5rem",
+  },
 };
