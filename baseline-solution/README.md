@@ -156,6 +156,10 @@ Use [`prompts/01-implementation_plan.md`](./prompts/01-implementation_plan.md) o
 
 Use [`prompts/02-claude-code-handoff.md`](./prompts/02-claude-code-handoff.md) when handing the current state to Claude Code for continuation.
 
+Use [`prompts/06-presentation-guidelines.md`](./prompts/06-presentation-guidelines.md) for a general presentation strategy.
+
+Use [`prompts/07-human-first-pitch-coach.md`](./prompts/07-human-first-pitch-coach.md) for a grounded, human-led presentation that avoids generic AI buzzwords and focuses on clinical impact.
+
 ## Work Diary
 
 The running handoff log is:

@@ -658,3 +658,85 @@ Create a separate Codex implementation rather than continuing to rely on Gemini'
 
 ### Entry Block Signature
 This entry was written by Codex.
+
+## Session: Presentation Guidelines & Pitch Coach
+
+**Date:** March 19, 2026
+
+### Objective
+Create a structured prompt to help hackathon teams organize, script, and polish their final presentations, ensuring alignment with clinical impact and judging criteria.
+
+### Inspected
+- `docs/judging-criteria.md`: verified the scoring system (1-4) and what constitutes a "4" (Wow factor, clinician-friendly additions, time-saving potential).
+- `comms/mc-script-maeve.md`: confirmed the event context, key stakeholders (NHS/MoD), and the "So What" of the problem (manual extraction burden).
+
+### Changed
+- Added `baseline-solution/prompts/06-presentation-guidelines.md`: a meta-prompt designed for teams to use with their own AI assistants. It structures the presentation into 6 key sections (Clinical So What, Technical Secret Sauce, Demo/Evidence, Safety/Trust, Future Vision, Q&A).
+- Restructured the 10-minute slot into a 7-minute pitch + 3-minute Q&A.
+- Updated `baseline-solution/README.md` to include the new prompt in the documentation.
+
+### Why
+- Hackathon teams often excel at technical implementation but struggle to communicate clinical value or safety considerations.
+- Dedicated Q&A time is critical for judges to probe technical and clinical assumptions.
+- Providing a "Pitch Coach" prompt ensures that teams hit the specific markers judges are looking for, especially the "Wow Factor" required for a score of 4.
+- The prompt encourages teams to lead with impact rather than just code.
+
+### Notes
+- Prompt followed for these tasks: direct user instruction.
+
+### Entry Block Signature
+This entry was written by Gemini CLI.
+
+## Session: Final Presentation Plan Synthesis
+
+**Date:** March 19, 2026
+
+### Objective
+Synthesize the technical achievements of the Standard Solution (Gemini, Codex, and Claude iterations) into a final 10-minute presentation plan for the hackathon judging.
+
+### Inspected
+- `baseline-solution/src/`: confirmed the final pipeline logic (Claude-enhanced extractor with Codex-styled Excel writer).
+- `baseline-solution/reports/`: reviewed prior gap reports to ensure the "why" and the "limitations" are correctly represented.
+
+### Changed
+- Created `baseline-solution/reports/final-presentation-plan.md`: a complete 7-minute pitch script, slide-by-slide outline, and 3-minute Q&A prep guide for the Standard Solution team.
+
+### Why
+- The `reports/` directory is the standard location for analytical and summary artifacts in this project.
+- A final plan ensures that the technical effort is translated into clinical value for the judging panel.
+- It provides a clear script and strategy for answering "hard questions" regarding safety, privacy, and scale.
+
+### Notes
+- This session concludes the preparation phase for the final hackathon presentation.
+
+### Entry Block Signature
+This entry was written by Gemini CLI.
+
+## Session: Human-First Pitch Coach
+
+**Date:** March 19, 2026
+
+### Objective
+Replace the previous impersonal, buzzword-heavy presentation prompt with a grounded, human-first prompt that focuses on engineering reality and clinical impact.
+
+### Inspected
+- `baseline-solution/prompts/06-presentation-guidelines.md`: noted it was too marketing-heavy ("AI slop").
+- User feedback: "It's impersonal... write a new prompt to fix it."
+
+### Changed
+- Added `baseline-solution/prompts/07-human-first-pitch-coach.md`: This new prompt explicitly forbids buzzwords and requires the team to introduce themselves, explain the manual grind of the problem, and honestly state what was (and wasn't) solved.
+- Restructured the story arc: Introduction -> What is the problem -> Why it sucks -> What we did -> Did it solve it -> Thank you.
+
+### Why
+- Clinicians and technical judges value transparency and specific technical detail over vague promises of "transformation."
+- Grounding the presentation in the "manual grind" makes the time-saving potential of the code much more vivid.
+- Being honest about gaps (what wasn't solved) builds credibility with senior technical experts on the judging panel.
+
+### Notes
+- This is now the recommended prompt for the Standard Solution team to use for their final preparation.
+
+### Entry Block Signature
+This entry was written by Gemini CLI.
+
+
+
