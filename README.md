@@ -161,7 +161,8 @@ All rooms in College Building. To attend online, use the [Activities Meeting Lin
 
 1h in person and online sessions, starting on the hour, every hour, join anytime that suits.
 
-- ELG08 (Study Area) — 23:00–09:00 (Monster + Pizza overnight)
+- **All-nighter hackathon (Monster + Pizza overnight)** — 23:00–09:00 
+  *Venue to be changed — a message will be circulated with the new location shortly.*
 
 Join any time to fine tune your work, or start from scratch.
   
