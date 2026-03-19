@@ -75,6 +75,7 @@ yarn.lock
 out/
 .turbo/
 .vercel/
+tmp/
 
 # Env/config secrets
 .env
