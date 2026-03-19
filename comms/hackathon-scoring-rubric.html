@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical AI Hackathon — Judge Scoring Sheet</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    color: #111;
+    background: #fff;
+    width: 210mm;
+    margin: 0 auto;
+    padding: 15mm;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #1a3a5c;
+    padding-bottom: 8px;
+  }
+  .header .event-name {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+  }
+  .header h1 {
+    font-size: 18pt;
+    color: #1a3a5c;
+    font-weight: bold;
+    margin: 4px 0 8px;
+  }
+  .header-fields {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 10pt;
+  }
+  .header-field {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .header-field label {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .header-field .underline {
+    width: 120px;
+    border-bottom: 1px solid #333;
+    height: 16px;
+  }
+
+  /* ── Scale reference box ── */
+  .scale-box {
+    border: 1.5px solid #888;
+    background: #f5f5f5;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 3px;
+  }
+  .scale-box h2 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  .scale-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+  }
+  .scale-table th {
+    background: #1a3a5c;
+    color: #fff;
+    padding: 4px 8px;
+    text-align: left;
+    font-weight: bold;
+  }
+  .scale-table td {
+    padding: 3px 8px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .scale-table tr:last-child td {
+    border-bottom: none;
+  }
+  .scale-table .score-cell {
+    font-weight: bold;
+    font-size: 11pt;
+    color: #1a3a5c;
+    width: 28px;
+    text-align: center;
+  }
+  .score-4-note {
+    font-style: italic;
+    font-size: 7.5pt;
+    color: #555;
+    margin-top: 5px;
+  }
+
+  /* ── Scoring table ── */
+  .section-title {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444;
+    font-weight: bold;
+    margin: 10px 0 4px;
+  }
+  .scoring-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+  }
+  .scoring-table th {
+    background: #1a3a5c;
+    color: #fff;
+    padding: 5px 4px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #1a3a5c;
+  }
+  .scoring-table th.team-col {
+    text-align: left;
+    padding-left: 6px;
+  }
+  .scoring-table td {
+    border: 1px solid #bbb;
+    padding: 0;
+    height: 28px;
+    vertical-align: middle;
+  }
+  .scoring-table td.team-cell {
+    padding: 2px 6px;
+    min-width: 35mm;
+  }
+  .scoring-table td.score-cell {
+    text-align: center;
+    min-width: 1.5cm;
+  }
+  .scoring-table td.total-cell {
+    text-align: center;
+    min-width: 1.5cm;
+    font-weight: bold;
+  }
+  .scoring-table td.notes-cell {
+    min-width: 4cm;
+    padding: 2px 4px;
+  }
+  .scoring-table tr:nth-child(odd) td {
+    background: #f0f4f8;
+  }
+  .scoring-table tr:nth-child(even) td {
+    background: #fff;
+  }
+
+  /* ── Prize summary ── */
+  .prize-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .prize-box {
+    border: 1px solid #1a3a5c;
+    border-radius: 3px;
+    padding: 6px 10px;
+  }
+  .prize-box .prize-title {
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a3a5c;
+    margin-bottom: 4px;
+  }
+  .prize-box .winner-line {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    font-size: 9pt;
+  }
+  .prize-box .winner-line label {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .prize-box .winner-line .underline {
+    flex-grow: 1;
+    border-bottom: 1px solid #333;
+    height: 16px;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    font-size: 7.5pt;
+    font-style: italic;
+    color: #888;
+    border-top: 1px solid #ddd;
+    padding-top: 6px;
+    margin-top: 8px;
+  }
+
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 15mm;
+    }
+    body {
+      width: 210mm;
+      margin: 0;
+      padding: 0;
+    }
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. Header -->
+  <div class="header">
+    <div class="event-name">Clinical AI Hackathon</div>
+    <h1>Judge Scoring Sheet</h1>
+    <div class="header-fields">
+      <div class="header-field">
+        <label>Judge:</label>
+        <div class="underline"></div>
+      </div>
+      <div class="header-field">
+        <label>Date:</label>
+        <div class="underline"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Scoring Scale Reference Box -->
+  <div class="scale-box">
+    <h2>Scoring Scale Reference</h2>
+    <table class="scale-table">
+      <thead>
+        <tr>
+          <th style="width:40px; text-align:center;">Score</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="score-cell">1</td>
+          <td>Not all core requirements implemented — major gaps; does not fully solve the task</td>
+        </tr>
+        <tr>
+          <td class="score-cell">2</td>
+          <td>All core requirements implemented — works end-to-end, accurate/useful Excel output, solid level</td>
+        </tr>
+        <tr>
+          <td class="score-cell">3</td>
+          <td>Surpassed expectations — noticeably better: clever features, polish, real-world ready</td>
+        </tr>
+        <tr>
+          <td class="score-cell">4</td>
+          <td>Blew my mind — exceptional: innovative, clinically transformative, wow factor</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="score-4-note">
+      <strong>Guidance for score 4:</strong> Use sparingly for projects that genuinely surprise or impress — e.g., unusually
+      accurate/safe extraction on tricky real-world cases, smart clinician-friendly additions (confidence flags, summaries),
+      elegant handling of edge cases, or clear potential to save serious time/errors in NHS/MoD workflows.
+      It should feel like <em>"this could actually change how we work"</em>.
+    </p>
+  </div>
+
+  <!-- 3. Scoring Table -->
+  <div class="section-title">Team Scores</div>
+  <table class="scoring-table">
+    <thead>
+      <tr>
+        <th class="team-col">Team # / Name</th>
+        <th>Documentation<br>(1–4)</th>
+        <th>Presentation<br>(1–4)</th>
+        <th>Code<br>(1–4)</th>
+        <th>Total<br>(3–12)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="team-cell">1</td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="total-cell"></td>
+        <td class="notes-cell"></td>
+      </tr>
+      <tr>
+        <td class="team-cell">2</td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="total-cell"></td>
+        <td class="notes-cell"></td>
+      </tr>
+      <tr>
+        <td class="team-cell">3</td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="total-cell"></td>
+        <td class="notes-cell"></td>
+      </tr>
+      <tr>
+        <td class="team-cell">4</td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="total-cell"></td>
+        <td class="notes-cell"></td>
+      </tr>
+      <tr>
+        <td class="team-cell">5</td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="total-cell"></td>
+        <td class="notes-cell"></td>
+      </tr>
+      <tr>
+        <td class="team-cell">6</td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="score-cell"></td>
+        <td class="total-cell"></td>
+        <td class="notes-cell"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. Prize Category Summary -->
+  <div class="section-title">Prize Category — Recommended Winners</div>
+  <div class="prize-summary">
+    <div class="prize-box">
+      <div class="prize-title">Best Documentation</div>
+      <div class="winner-line">
+        <label>Winner:</label>
+        <div class="underline"></div>
+      </div>
+    </div>
+    <div class="prize-box">
+      <div class="prize-title">Best Presentation</div>
+      <div class="winner-line">
+        <label>Winner:</label>
+        <div class="underline"></div>
+      </div>
+    </div>
+    <div class="prize-box">
+      <div class="prize-title">Best Code</div>
+      <div class="winner-line">
+        <label>Winner:</label>
+        <div class="underline"></div>
+      </div>
+    </div>
+    <div class="prize-box" style="border-color: #7a3b00;">
+      <div class="prize-title" style="color: #7a3b00;">Overall Winner</div>
+      <div class="winner-line">
+        <label>Winner:</label>
+        <div class="underline"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Footer -->
+  <div class="footer">Clinical AI Hackathon — Confidential judge scoring sheet</div>
+
+</body>
+</html>
