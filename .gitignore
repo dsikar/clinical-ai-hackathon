@@ -65,3 +65,20 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# Node / Next.js artifacts
+node_modules/
+**/node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.next/
+out/
+.turbo/
+.vercel/
+
+# Env/config secrets
+.env
+.env.*
+
+# npm diagnostics
+npm-debug.log*
