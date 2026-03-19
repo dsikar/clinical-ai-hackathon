@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useState } from "react";
 
 type ProcessingState = "idle" | "uploading" | "processing" | "ready" | "error";
@@ -28,23 +29,33 @@ export default function HomePage() {
     setMessage("Uploading document…");
 
     try {
-      // Placeholder: simulate a backend call that triggers the Python extractor.
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+
+      const apiBase = process.env.NEXT_PUBLIC_MDT_API_BASE_URL;
       setState("processing");
       setMessage("Processing MDT tables…");
 
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      console.log('api url : ', apiBase);
+      const response = await fetch(`${apiBase}/extract`, {
+        method: "POST",
+        body: formData
+      });
 
-      // Placeholder blob; replace by fetch to backend once implemented.
-      const blob = new Blob(["Excel content placeholder"], { type: "application/vnd.ms-excel" });
-      const url = URL.createObjectURL(blob);
-      setDownloadUrl(url);
+      if (!response.ok) {
+        const detail = await response.json().catch(() => ({}));
+        throw new Error(detail?.detail ?? "Extraction failed");
+      }
+
+      const blob = await response.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      setDownloadUrl(objectUrl);
       setState("ready");
       setMessage("Extraction complete. Download the workbook below.");
     } catch (error) {
       console.error(error);
       setState("error");
-      setMessage("Something went wrong. Please try again.");
+      setMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
     }
   }, [selectedFile]);
 
@@ -61,6 +72,9 @@ export default function HomePage() {
   return (
     <main style={styles.main}>
       <section style={styles.card}>
+        <div style={styles.logoWrapper}>
+          <Image src="/assets/nhs2.jpg" alt="NHS Logo" width={120} height={48} priority />
+        </div>
         <h1 style={styles.heading}>Clinical AI MDT Extractor</h1>
         <p style={styles.subheading}>
           Upload the MDT outcome Word document to generate a prototype Excel database. The backend Python pipeline
@@ -117,6 +131,11 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "2.5rem",
     boxShadow: "0 25px 60px rgba(15, 23, 42, 0.15)",
     border: "1px solid rgba(99, 102, 241, 0.2)"
+  },
+  logoWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "1.5rem"
   },
   heading: {
     margin: 0,
