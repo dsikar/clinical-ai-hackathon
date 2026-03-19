@@ -10,6 +10,8 @@ from fastapi.responses import FileResponse
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 SRC_DIR = ROOT_DIR / "baseline-solution" / "src"
+TEMP_DIR = ROOT_DIR / "tmp"
+TEMP_DIR.mkdir(exist_ok=True)
 if str(SRC_DIR) not in sys.path:
     sys.path.append(str(SRC_DIR))
 
@@ -48,7 +50,7 @@ async def extract_workbook(background_tasks: BackgroundTasks, file: UploadFile =
         raise HTTPException(status_code=400, detail="Please upload a DOCX file.")
 
     try:
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as tmp_docx:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".docx", dir=TEMP_DIR) as tmp_docx:
             shutil.copyfileobj(file.file, tmp_docx)
             source_path = Path(tmp_docx.name)
         logger.info("Saved upload to %s", source_path)
@@ -59,7 +61,7 @@ async def extract_workbook(background_tasks: BackgroundTasks, file: UploadFile =
         await file.close()
 
     try:
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx") as tmp_xlsx:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx", dir=TEMP_DIR) as tmp_xlsx:
             excel_path = Path(tmp_xlsx.name)
         logger.info("Running pipeline for %s -> %s", source_path, excel_path)
         run_claude_pipeline(docx_input=source_path, output_workbook=excel_path)
