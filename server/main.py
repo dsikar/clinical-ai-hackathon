@@ -1,3 +1,4 @@
+import base64
 import logging
 import shutil
 import sys
@@ -6,7 +7,7 @@ from pathlib import Path
 
 from fastapi import BackgroundTasks, FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import JSONResponse
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 SRC_DIR = ROOT_DIR / "baseline-solution" / "src"
@@ -16,6 +17,7 @@ if str(SRC_DIR) not in sys.path:
     sys.path.append(str(SRC_DIR))
 
 from pipeline_claude import run_pipeline as run_claude_pipeline  # type: ignore  # noqa: E402
+from .analyse import analyse as analyse_workbook, print_report as render_text_report  # type: ignore  # noqa: E402
 
 
 logging.basicConfig(level=logging.INFO)
@@ -41,10 +43,6 @@ def _cleanup_file(path: Path) -> None:
 
 @app.post("/extract")
 async def extract_workbook(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
-    """
-    Accepts an MDT Word document via multipart/form-data and returns a placeholder XLSX.
-    Integration with pipeline_claude.py will replace the stubbed logic later.
-    """
     if not file.filename or not file.filename.lower().endswith(".docx"):
         logger.warning("Rejected upload: invalid filename %s", file.filename)
         raise HTTPException(status_code=400, detail="Please upload a DOCX file.")
@@ -66,13 +64,21 @@ async def extract_workbook(background_tasks: BackgroundTasks, file: UploadFile =
         logger.info("Running pipeline for %s -> %s", source_path, excel_path)
         run_claude_pipeline(docx_input=source_path, output_workbook=excel_path)
         logger.info("Generated workbook at %s", excel_path)
+
+        results = analyse_workbook(str(excel_path))
+        report_text = render_text_report(results)
+        excel_bytes = excel_path.read_bytes()
+        excel_b64 = base64.b64encode(excel_bytes).decode("utf-8")
+
         background_tasks.add_task(_cleanup_file, source_path)
         background_tasks.add_task(_cleanup_file, excel_path)
-        return FileResponse(
-            excel_path,
-            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            filename="generated-database.xlsx",
-            background=background_tasks,
+
+        return JSONResponse(
+            {
+                "report": report_text,
+                "results": results,
+                "workbook_base64": excel_b64,
+            }
         )
     except Exception as exc:
         logger.exception("Extraction failed: %s", exc)

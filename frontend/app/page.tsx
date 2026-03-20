@@ -9,6 +9,7 @@ export default function HomePage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [state, setState] = useState<ProcessingState>("idle");
   const [downloadUrl, setDownloadUrl] = useState<string>("");
+  const [reportUrl, setReportUrl] = useState<string>("");
   const [message, setMessage] = useState<string>(
     "Upload an MDT Word document to begin.",
   );
@@ -31,6 +32,7 @@ export default function HomePage() {
   const handleClear = useCallback(() => {
     setSelectedFile(null);
     setDownloadUrl("");
+    setReportUrl("");
     setState("idle");
     setMessage("Upload an MDT Word document to begin.");
     const input = document.getElementById(
@@ -69,11 +71,31 @@ export default function HomePage() {
         throw new Error(detail?.detail ?? "Extraction failed");
       }
 
-      const blob = await response.blob();
-      const objectUrl = URL.createObjectURL(blob);
-      setDownloadUrl(objectUrl);
+      const payload = (await response.json()) as {
+        workbook_base64: string;
+        report: string;
+      };
+      const workbookBytes = Uint8Array.from(
+        atob(payload.workbook_base64),
+        (char) => char.charCodeAt(0),
+      );
+      const workbookBlob = new Blob(
+        [workbookBytes],
+        {
+          type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        },
+      );
+      const workbookUrl = URL.createObjectURL(workbookBlob);
+      setDownloadUrl(workbookUrl);
+
+      const reportBlob = new Blob([payload.report], {
+        type: "text/plain;charset=utf-8",
+      });
+      const reportObjectUrl = URL.createObjectURL(reportBlob);
+      setReportUrl(reportObjectUrl);
+
       setState("ready");
-      setMessage("Extraction complete. Download the workbook below.");
+      setMessage("Extraction complete. Download the workbook and report below.");
     } catch (error) {
       console.error(error);
       setState("error");
@@ -94,6 +116,16 @@ export default function HomePage() {
     link.download = "generated-database.xlsx";
     link.click();
   }, [downloadUrl]);
+
+  const handleReportDownload = useCallback(() => {
+    if (!reportUrl) {
+      return;
+    }
+    const link = document.createElement("a");
+    link.href = reportUrl;
+    link.download = "coverage-report.txt";
+    link.click();
+  }, [reportUrl]);
 
   return (
     <main style={styles.main}>
@@ -162,6 +194,20 @@ export default function HomePage() {
           disabled={!downloadUrl}
         >
           Download Excel
+        </button>
+
+        <button
+          type="button"
+          onClick={handleReportDownload}
+          style={{
+            ...styles.secondaryButton,
+            opacity: reportUrl ? 1 : 0.4,
+            cursor: reportUrl ? "pointer" : "not-allowed",
+            marginTop: "1rem",
+          }}
+          disabled={!reportUrl}
+        >
+          Download Report
         </button>
       </section>
     </main>
