@@ -19,8 +19,8 @@
     width: 210mm;
     height: 297mm;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     position: relative;
   }
 
@@ -28,7 +28,7 @@
   .page::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 33.333%;
     left: 8mm;
     right: 8mm;
     border-top: 1.5px dashed #aaa;
@@ -37,32 +37,23 @@
   .page::after {
     content: '';
     position: absolute;
-    left: 50%;
-    top: 8mm;
-    bottom: 8mm;
-    border-left: 1.5px dashed #aaa;
+    top: 66.666%;
+    left: 8mm;
+    right: 8mm;
+    border-top: 1.5px dashed #aaa;
     z-index: 10;
   }
 
-  .scissors-h {
+  .scissors-cut {
     position: absolute;
-    top: calc(50% - 9px);
     left: 3mm;
     font-size: 16px;
     color: #aaa;
     z-index: 20;
     line-height: 1;
   }
-  .scissors-v {
-    position: absolute;
-    left: calc(50% - 9px);
-    top: 2mm;
-    font-size: 16px;
-    color: #aaa;
-    z-index: 20;
-    transform: rotate(90deg);
-    line-height: 1;
-  }
+  .scissors-cut.top { top: calc(33.333% - 9px); }
+  .scissors-cut.bottom { top: calc(66.666% - 9px); }
 
   .voucher {
     padding: 8mm 10mm 7mm 10mm;
@@ -70,7 +61,7 @@
     flex-direction: column;
     justify-content: space-between;
     border: 2.5px solid #1a3a5c;
-    margin: 6mm;
+    margin: 4mm 8mm;
     position: relative;
   }
 
@@ -185,25 +176,14 @@
     color: #333;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 3px;
   }
 
-  .field-line {
-    display: flex;
-    align-items: flex-end;
-    gap: 6px;
-  }
-
-  .field-label {
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 8pt;
-  }
-
-  .field-underline {
-    flex-grow: 1;
-    border-bottom: 1px solid #333;
-    height: 16px;
+  .footer-meta {
+    text-align: center;
+    font-size: 7.5pt;
+    line-height: 1.25;
+    color: #555;
   }
 
   @media print {
@@ -228,15 +208,15 @@
 <body>
 <div class="page">
 
-  <span class="scissors-h">✂</span>
-  <span class="scissors-v">✂</span>
+  <span class="scissors-cut top">✂</span>
+  <span class="scissors-cut bottom">✂</span>
 
-  <!-- Voucher 1: Best Documentation -->
+  <!-- Voucher 1: Best Understanding -->
   <div class="voucher">
     <div class="voucher-header">
       <div class="event-name">Clinical AI Hackathon</div>
-      <div class="category">Best Documentation</div>
-      <div class="presenter">Presented by City St George's, University of London</div>
+      <div class="category">Best Understanding</div>
+      <div class="presenter">Presented by Dr. Alex Nicholls</div>
     </div>
     <div class="voucher-body">
       <div class="prize-label">Prize Award</div>
@@ -246,23 +226,17 @@
       <div class="contact-note">You will be contacted by daniel.sikar@city.ac.uk to arrange the voucher</div>
     </div>
     <div class="voucher-footer">
-      <div class="field-line">
-        <span class="field-label">Winner:</span>
-        <div class="field-underline"></div>
-      </div>
-      <div class="field-line">
-        <span class="field-label">Date:</span>
-        <div class="field-underline"></div>
-      </div>
+      <div class="footer-meta">City St George's, University of London</div>
+      <div class="footer-meta">20 March 2026</div>
     </div>
   </div>
 
-  <!-- Voucher 2: Best Presentation -->
+  <!-- Voucher 2: Best Solution -->
   <div class="voucher">
     <div class="voucher-header">
       <div class="event-name">Clinical AI Hackathon</div>
-      <div class="category">Best Presentation</div>
-      <div class="presenter">Presented by City St George's, University of London</div>
+      <div class="category">Best Solution</div>
+      <div class="presenter">Presented by Hitesh Patel</div>
     </div>
     <div class="voucher-body">
       <div class="prize-label">Prize Award</div>
@@ -272,66 +246,28 @@
       <div class="contact-note">You will be contacted by daniel.sikar@city.ac.uk to arrange the voucher</div>
     </div>
     <div class="voucher-footer">
-      <div class="field-line">
-        <span class="field-label">Winner:</span>
-        <div class="field-underline"></div>
-      </div>
-      <div class="field-line">
-        <span class="field-label">Date:</span>
-        <div class="field-underline"></div>
-      </div>
+      <div class="footer-meta">City St George's, University of London</div>
+      <div class="footer-meta">20 March 2026</div>
     </div>
   </div>
 
-  <!-- Voucher 3: Best Code -->
-  <div class="voucher">
-    <div class="voucher-header">
-      <div class="event-name">Clinical AI Hackathon</div>
-      <div class="category">Best Code</div>
-      <div class="presenter">Presented by danu.ai</div>
-    </div>
-    <div class="voucher-body">
-      <div class="prize-label">Prize Award</div>
-      <div class="prize-value">£50</div>
-      <div class="congrats-team">Congratulations Team <span class="team-underline"></span></div>
-      <div class="congrats">Awarded in recognition of outstanding achievement</div>
-      <div class="contact-note">You will be contacted by daniel.sikar@city.ac.uk to arrange the voucher</div>
-    </div>
-    <div class="voucher-footer">
-      <div class="field-line">
-        <span class="field-label">Winner:</span>
-        <div class="field-underline"></div>
-      </div>
-      <div class="field-line">
-        <span class="field-label">Date:</span>
-        <div class="field-underline"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Voucher 4: Overall Winner -->
+  <!-- Voucher 3: Overall Winner -->
   <div class="voucher" style="border-color: #7a3b00;">
     <div class="voucher-header" style="background: #7a3b00;">
       <div class="event-name">Clinical AI Hackathon</div>
       <div class="category">Overall Winner</div>
-      <div class="presenter">Presented by danu.ai</div>
+      <div class="presenter">Presented by Dr. Anita Wale</div>
     </div>
     <div class="voucher-body">
       <div class="prize-label">Prize Award</div>
-      <div class="prize-value" style="color: #7a3b00;">£50</div>
+      <div class="prize-value" style="color: #7a3b00;">£100</div>
       <div class="congrats-team" style="color: #7a3b00;">Congratulations Team <span class="team-underline" style="border-color: #7a3b00;"></span></div>
       <div class="congrats">Awarded in recognition of outstanding achievement</div>
       <div class="contact-note">You will be contacted by daniel.sikar@city.ac.uk to arrange the voucher</div>
     </div>
     <div class="voucher-footer">
-      <div class="field-line">
-        <span class="field-label">Winner:</span>
-        <div class="field-underline"></div>
-      </div>
-      <div class="field-line">
-        <span class="field-label">Date:</span>
-        <div class="field-underline"></div>
-      </div>
+      <div class="footer-meta">City St George's, University of London</div>
+      <div class="footer-meta">20 March 2026</div>
     </div>
   </div>
 
