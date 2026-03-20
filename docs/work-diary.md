@@ -157,7 +157,7 @@ Finalise repository content and communications materials ahead of the hackathon 
 
 ### comms/ (new directory)
 - `welcome-email.txt` — draft welcome email for 106 participants
-- `mc-script-maeve.md` — MC script for Maeve Hutchinson, opening and closing ceremonies
+- `mc-script-dave-muir.md` — MC script for Dave Muir, opening and closing ceremonies
 - `recipients.txt` — gitignored recipient list template
 
 ### docs/
