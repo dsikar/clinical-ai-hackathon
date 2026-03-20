@@ -62,7 +62,7 @@
     letter-spacing: 2.2px;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 3mm;
+    margin-bottom: 1.5mm;
   }
 
   h1 {
@@ -78,19 +78,43 @@
     max-width: 110mm;
   }
 
+  .subtitle-note {
+    margin: 2mm 0 0;
+    font-size: 9pt;
+    line-height: 1.2;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .venue-line {
+    margin: 0 0 3mm;
+    font-size: 9pt;
+    line-height: 1.2;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
   .meta {
     padding: 7mm 7mm 6mm;
     display: grid;
     align-content: center;
-    gap: 4mm;
+    gap: 2mm;
     background: var(--accent-soft);
   }
 
-  .meta-row {
+  .meta-name {
+    font-size: 10pt;
+    line-height: 1.3;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .meta-entry {
     display: grid;
-    grid-template-columns: 17mm 1fr;
+    grid-template-columns: 14mm 1fr;
     gap: 3mm;
     align-items: end;
+    margin-top: 2mm;
     font-size: 10pt;
   }
 
@@ -101,7 +125,7 @@
 
   .write-line {
     border-bottom: 1.2px solid var(--ink);
-    min-height: 7mm;
+    min-height: 6mm;
   }
 
   .scale-box {
@@ -320,11 +344,13 @@
   @media print {
     @page {
       size: A4 portrait;
-      margin: 15mm;
+      margin: 8mm;
     }
 
     body {
       min-height: auto;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     .page {
@@ -332,10 +358,74 @@
       min-height: auto;
       margin: 0;
       padding: 0;
+      gap: 3mm;
     }
 
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    .masthead {
+      min-height: 24mm;
+    }
+
+    .masthead-title {
+      padding: 5mm 6mm 4.5mm;
+    }
+
+    .meta {
+      padding: 5mm 6mm 4.5mm;
+    }
+
+    h1 {
+      margin: 0 0 1.2mm;
+      font-size: 20pt;
+    }
+
+    .subtitle,
+    .meta-name,
+    .meta-entry {
+      font-size: 9pt;
+    }
+
+    .subtitle-note,
+    .venue-line {
+      font-size: 8pt;
+    }
+
+    .scale-box {
+      padding: 3mm 4mm;
+    }
+
+    .section-kicker {
+      margin: 0 0 1.5mm;
+    }
+
+    .scale-grid {
+      gap: 2mm;
+    }
+
+    .scale-item {
+      padding: 2mm 2.2mm;
+      gap: 2.5mm;
+    }
+
+    thead th {
+      padding: 2.2mm 2mm;
+      font-size: 8pt;
+    }
+
+    tbody td {
+      height: 10mm;
+      padding: 1.2mm 2mm;
+      font-size: 8.2pt;
+    }
+
+    .notes-lines {
+      background-image:
+        linear-gradient(to bottom, transparent 0, transparent 3.5mm, rgba(152, 161, 170, 0.75) 3.5mm, rgba(152, 161, 170, 0.75) 3.7mm, transparent 3.7mm, transparent 7.4mm);
+      background-size: 100% 7.4mm;
+    }
+
+    .prize-card {
+      padding: 3mm;
+    }
   }
 </style>
 </head>
@@ -343,59 +433,91 @@
   <main class="page">
     <section class="masthead">
       <div class="masthead-title">
-        <div class="eyebrow">Clinical AI Hackathon</div>
+        <div class="eyebrow">Clinical AI Hackathon | 20 March 2026</div>
+        <p class="venue-line">City St George's, University of London</p>
         <h1>Judge Scoring Sheet</h1>
         <p class="subtitle">
-          Score each team across documentation, presentation, and code. Record prize winners after all teams have presented.
+          You are judging how well each team understood the real operational and clinical problem, the data privacy and code-compliance constraints shaping it, and how well their solution addressed them.
         </p>
+        <p class="subtitle-note">Result is by majority decision.</p>
       </div>
       <div class="meta">
-        <div class="meta-row">
+        <div class="meta-name">Dr. Alex Nicholls (MOD)</div>
+        <div class="meta-name">Dr. Anita Wale (NHS)</div>
+        <div class="meta-name">Hitesh Patel (NHS)</div>
+        <div class="meta-entry">
           <div class="meta-label">Judge</div>
-          <div class="write-line"></div>
-        </div>
-        <div class="meta-row">
-          <div class="meta-label">Date</div>
           <div class="write-line"></div>
         </div>
       </div>
     </section>
 
     <section class="scale-box">
-      <p class="section-kicker">Scoring Scale Reference</p>
+      <p class="section-kicker">Solution Scale Reference</p>
       <div class="scale-grid">
         <div class="scale-item">
           <div class="scale-score">1</div>
           <div class="scale-copy">
-            <strong>Major gaps</strong>
-            <span>Not all core requirements implemented; does not fully solve the task.</span>
+            <strong>Incomplete implementation</strong>
+            <span>Not all core requirements implemented.</span>
           </div>
         </div>
         <div class="scale-item">
           <div class="scale-score">2</div>
           <div class="scale-copy">
-            <strong>Solid end-to-end</strong>
-            <span>All core requirements implemented; useful and accurate output at a good standard.</span>
+            <strong>Met Expectiations</strong>
+            <span>All core requirements implemented.</span>
           </div>
         </div>
         <div class="scale-item">
           <div class="scale-score">3</div>
           <div class="scale-copy">
             <strong>Surpassed expectations</strong>
-            <span>Noticeably better through polish, thoughtful features, or stronger real-world readiness.</span>
+            <span>Thoughful additional features.</span>
           </div>
         </div>
         <div class="scale-item">
           <div class="scale-score">4</div>
           <div class="scale-copy">
-            <strong>Blew my mind</strong>
-            <span>Exceptional, innovative, clinically transformative, and memorable.</span>
+            <strong>Exceptional</strong>
+            <span>Innovative and clinically transformative</span>
           </div>
         </div>
       </div>
-      <p class="score-4-note">
-        Guidance for score 4: use sparingly for projects that genuinely surprise or impress, such as unusually safe or accurate extraction on tricky real-world cases, clinician-friendly additions like confidence flags or summaries, elegant handling of edge cases, or clear potential to save serious time or reduce errors in NHS or MoD workflows. It should feel like "this could actually change how we work".
-      </p>
+    </section>
+
+    <section class="scale-box">
+      <p class="section-kicker">Understanding Scale Reference</p>
+      <div class="scale-grid">
+        <div class="scale-item">
+          <div class="scale-score">1</div>
+          <div class="scale-copy">
+            <strong>Incomplete understanding</strong>
+            <span>Missing key artefacts or unclear explanation.</span>
+          </div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-score">2</div>
+          <div class="scale-copy">
+            <strong>Met Expectations</strong>
+            <span>Clear understanding of the core problem.</span>
+          </div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-score">3</div>
+          <div class="scale-copy">
+            <strong>Surpassed expectations</strong>
+            <span>Thoughtful additional context and clear structure.</span>
+          </div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-score">4</div>
+          <div class="scale-copy">
+            <strong>Exceptional</strong>
+            <span>Original insights, with potential for publication.</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -405,10 +527,9 @@
           <thead>
             <tr>
               <th class="team-col">Team # / Name</th>
-              <th class="score-col">Documentation<br>(1-4)</th>
-              <th class="score-col">Presentation<br>(1-4)</th>
-              <th class="score-col">Code<br>(No Action Required)</th>
-              <th class="total-col">Total<br>(3-12)</th>
+              <th class="score-col">Understanding<br>(1-4)</th>
+              <th class="score-col">Solution<br>(1-4)</th>
+              <th class="total-col">Total<br>(2-8)</th>
               <th class="notes-col">Notes</th>
             </tr>
           </thead>
@@ -417,7 +538,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">1</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -429,7 +549,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -437,7 +556,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">3</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -449,7 +567,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -457,7 +574,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">5</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -469,7 +585,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -477,7 +592,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">7</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -489,7 +603,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -497,7 +610,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">9</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -509,7 +621,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -517,7 +628,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">11</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -529,7 +639,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -537,7 +646,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">13</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -549,7 +657,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -557,7 +664,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">15</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -569,7 +675,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -577,7 +682,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">17</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -589,7 +693,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -599,7 +702,6 @@
               </td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
-              <td class="score-cell"></td>
               <td class="total-cell"></td>
               <td class="notes-cell"><div class="notes-lines"></div></td>
             </tr>
@@ -607,7 +709,6 @@
               <td>
                 <div class="team-slot"><span class="team-number">20</span><span class="name-line"></span></div>
               </td>
-              <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="score-cell"></td>
               <td class="total-cell"></td>
@@ -622,14 +723,14 @@
       <p class="section-kicker">Recommended Prize Winners</p>
       <div class="prizes">
         <div class="prize-card">
-          <div class="prize-title">Best Documentation</div>
+          <div class="prize-title">Best Understanding</div>
           <div class="winner-line">
             <strong>Winner</strong>
             <div class="write-line"></div>
           </div>
         </div>
         <div class="prize-card">
-          <div class="prize-title">Best Presentation</div>
+          <div class="prize-title">Best Solution</div>
           <div class="winner-line">
             <strong>Winner</strong>
             <div class="write-line"></div>
@@ -653,8 +754,6 @@
     </section>
 
     <footer class="footer">
-      <span><strong>Clinical AI Hackathon</strong> - Confidential judge scoring sheet</span>
-      <span>Print one copy per judge</span>
     </footer>
   </main>
 </body>
