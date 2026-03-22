@@ -206,7 +206,7 @@ Y4hu3WK2
 
 ## Credits
 
-Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/), NHS.
+Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/).
 
 Technical considerations by [Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38).
 
