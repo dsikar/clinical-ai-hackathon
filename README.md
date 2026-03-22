@@ -214,11 +214,11 @@ Repository created by [Daniel Sikar](https://github.com/dsikar) with [Claude Cod
 
 ## Winners
 
-- **Overall Winner:** Emily and the Gang
-- **Best Understanding:** Cloud9
-- **Best Solution:** Team B.A.M.
+- **Overall Winner:** Emily and the Gang (Jaeeun Lee, Joshua Bhawanlall, Matilde Sciarrini, Miesha Miah, Pritish Ranjan Verma)
+- **Best Understanding:** Cloud9 (Bhuvanesi Barua, Dhruvi Patadia)
+- **Best Solution:** Team B.A.M. (Ayantik Ray, Badrinarayan Nandakumar)
 
 ### Scoring Sheets
 The detailed scoring sheets from the judging panel can be found here: [hackathon-clinician-scoring-sheets.pdf](docs/hackathon-clinician-scoring-sheets.pdf)
 
-*Note: The final results were reached by judge consensus. These decisions are considered final and irrevocable.*
+*Note: The final results were reached by judge consensus following deliberation.*
