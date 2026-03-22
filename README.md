@@ -211,3 +211,14 @@ Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/peopl
 Technical considerations by [Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38), Ministry of Defence.
 
 Repository created by [Daniel Sikar](https://github.com/dsikar) with [Claude Code](https://code.claude.com/docs/en/overview), [OpenAI Codex](https://openai.com/codex/) and [Google Gemini](https://geminicli.com/).
+
+## Winners
+
+- **Overall Winner:** Emily and the Gang
+- **Best Understanding:** Cloud9
+- **Best Solution:** Team B.A.M.
+
+### Scoring Sheets
+The detailed scoring sheets from the judging panel can be found here: [hackathon-clinician-scoring-sheets.pdf](docs/hackathon-clinician-scoring-sheets.pdf)
+
+*Note: The final results were reached by judge consensus. These decisions are considered final and irrevocable.*
