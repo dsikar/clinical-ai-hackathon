@@ -45,15 +45,15 @@ Longitudinal patient data presented in Excel reflects patient history contained 
 
 ## Judge Panel
 
-- **[Dr. Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/)**: Consultant Radiologist and Clinical Academic at St George’s University Hospitals NHS Foundation Trust.
-- **[Dr. Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38)**: Ministry of Defence.
+- **[Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/)**: Consultant Radiologist and Clinical Academic at St George’s University Hospitals NHS Foundation Trust.
+- **[Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38)**: Ministry of Defence.
 - **[Hitesh Patel](https://uk.linkedin.com/in/hitesh-patel-68ab0223a)**: Superintendent Radiographer and Radiology IT Systems (RITS) Manager at St George’s University Hospitals NHS Foundation Trust.
 
 ## Master of Ceremonies
 
-- **[Dr. Dave Muir](https://uk.linkedin.com/in/dr-dave-d-muir-883b3b39)**: Lecturer Eng. Systems (AI-Automation, Electrical & STEM), Prog. Director Renewable Energy & Power Sys. Man. MSc., Dept of Engineering, School of Science & Technology, University Sustainability Operations Lead, Co-Chair Network for Racial Justice, City St George's University of London.
+- **[Dr Dave Muir](https://uk.linkedin.com/in/dr-dave-d-muir-883b3b39)**: Lecturer Eng. Systems (AI-Automation, Electrical & STEM), Prog. Director Renewable Energy & Power Sys. Man. MSc., Dept of Engineering, School of Science & Technology, University Sustainability Operations Lead, Co-Chair Network for Racial Justice, City St George's University of London.
 
-## Technical Considerations — by Dr Alex Nicholls, MOD
+## Technical Considerations - by Dr Alex Nicholls
 
 - **Technical Standards (DTAC)**: Software developed should ideally align with [Digital Technology Assessment Criteria (DTAC)](https://www.digitalregulations.innovation.nhs.uk/regulations-and-guidance-for-developers/all-developers-guidance/using-the-digital-technology-assessment-criteria-dtac/), specifically regarding clinical safety (DCB0129/DCB0160) and data residency.
 
@@ -112,7 +112,7 @@ Please read this README.md file carefully.
 
 ## Q&A with NHS team Monday 16 10:00-10:30
 
-Please attend the online meeting with Dr Anita Wale (NHS) and Dr Alex Nicholls (MoD), together with domain expert Hitesh Patel and sythentic dataset curator Ellie Hickey, Monday 16 10:00-10:30 to clarify any doubts you may have - link below:
+Please attend the online meeting with Dr Anita Wale and Dr Alex Nicholls, together with domain expert Hitesh Patel and sythentic dataset curator Ellie Hickey, Monday 16 10:00-10:30 to clarify any doubts you may have - link below:
 
 ```
 Hackathon intro chat
@@ -206,9 +206,9 @@ Y4hu3WK2
 
 ## Credits
 
-Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/).
+Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/), NHS.
 
-Technical considerations by [Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38), Ministry of Defence.
+Technical considerations by [Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38).
 
 Repository created by [Daniel Sikar](https://github.com/dsikar) with [Claude Code](https://code.claude.com/docs/en/overview), [OpenAI Codex](https://openai.com/codex/) and [Google Gemini](https://geminicli.com/).
 
