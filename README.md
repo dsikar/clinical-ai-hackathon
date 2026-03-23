@@ -99,6 +99,8 @@ clinical-ai-hackathon/
     ├── room_bookings.md             # Room allocations
     ├── judging-criteria.md          # Friday judging sheet
     ├── work-diary.md                # Development session notes
+    ├── presentations/               # Team presentation materials
+    │   └── cloud9/                  # Cloud9 presentation folder
     ├── digital_screen_1.jpg         # Banner image
     ├── logo_asset_2.jpg             # Alternate banner
     ├── mdt_list.png                 # Example MDT list format
@@ -204,13 +206,10 @@ Y4hu3WK2
 
 ---
 
-## Credits
+## Presentation Folders
 
-Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/).
-
-Technical considerations by [Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38).
-
-Repository created by [Daniel Sikar](https://github.com/dsikar) with [Claude Code](https://code.claude.com/docs/en/overview), [OpenAI Codex](https://openai.com/codex/) and [Google Gemini](https://geminicli.com/).
+- [All presentations](docs/presentations/)
+- [Cloud9](docs/presentations/cloud9/)
 
 ## Winners
 
@@ -222,3 +221,11 @@ Repository created by [Daniel Sikar](https://github.com/dsikar) with [Claude Cod
 The detailed scoring sheets from the judging panel can be found here: [hackathon-clinician-scoring-sheets.pdf](docs/hackathon-clinician-scoring-sheets.pdf)
 
 *Note: The final results were reached by judge consensus following deliberation.*
+
+## Credits
+
+Clinical problem statement by [Dr Anita Wale](https://www.stgeorges.nhs.uk/people/dr-anita-wale/).
+
+Technical considerations by [Dr Alex Nicholls](https://uk.linkedin.com/in/alex-nicholls-57301a38).
+
+Repository created by [Daniel Sikar](https://github.com/dsikar) with [Claude Code](https://code.claude.com/docs/en/overview), [OpenAI Codex](https://openai.com/codex/) and [Google Gemini](https://geminicli.com/).
