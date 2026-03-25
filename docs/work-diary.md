@@ -188,3 +188,20 @@ Finalise repository content and communications materials ahead of the hackathon 
 
 ### Workflow note
 - Agreed convention: one instruction at a time to avoid misreads and ensure exact wording is applied
+
+---
+
+# Work Diary - README Credit Update
+**Date:** March 25, 2026
+
+## Session Objective
+Record a small repository documentation update to credit the synthetic dataset curator in the main README.
+
+## Changes Made
+
+### README.md
+- Added a credits line for Ellie Hickley immediately after the technical considerations credit
+- Linked Ellie Hickley to her LinkedIn profile in the credits section
+
+### docs/work-diary.md
+- Added this diary entry to document the README credits update
