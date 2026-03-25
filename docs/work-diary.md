@@ -205,3 +205,19 @@ Record a small repository documentation update to credit the synthetic dataset c
 
 ### docs/work-diary.md
 - Added this diary entry to document the README credits update
+
+---
+
+# Work Diary - Credits Punctuation Cleanup
+**Date:** March 25, 2026
+
+## Session Objective
+Adjust the README credits section to use film-style credit formatting without trailing periods.
+
+## Changes Made
+
+### README.md
+- Removed trailing periods from each credits line for a cleaner credits style
+
+### docs/work-diary.md
+- Added this diary entry to document the credits punctuation cleanup
