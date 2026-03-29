@@ -132,6 +132,72 @@ Please take the time to add the Hackathon intro chat meeting to your calendar.
 
 A working starting point is provided in [`baseline-solution/`](baseline-solution/). We will look at this and other possibilities, starting Tuesday 17.
 
+## Project Architecture & Tooling
+
+| Component | Location | Purpose |
+|-----------|----------|---------|
+| **Baseline extractor** | `baseline-solution/src/` | Python pipeline that segments the DOCX, extracts fields (Claude extractor), aligns them to the prototype Excel schema, and writes a styled workbook. |
+| **API server** | `server/` | FastAPI app exposing a single `POST /extract` endpoint. It accepts an MDT `.docx`, runs the Claude pipeline, performs coverage analysis (`analyse.py`), renders a PDF report (text + charts), and returns both the workbook and PDF as Base64 blobs. |
+| **Frontend** | `frontend/` | Next.js (App Router) UI that lets users upload a DOCX, wait for processing, and download both outputs. When running via Docker, hot reload is enabled by mounting the local `frontend/` directory. |
+| **Analysis utilities** | `server/analyse.py` | CLI/report tooling to inspect generated Excel files, print coverage stats, and (now) render PDF reports and optional PNG charts. |
+
+### Running Locally
+
+1. **Backend**  
+   ```bash
+   cd server
+   pip install -r requirements.txt
+   uvicorn server.main:app --reload  # ensure PYTHONPATH=. when running from repo root
+   ```
+
+2. **Frontend**  
+   ```bash
+   cd frontend
+   npm install
+   npm run dev  # expects NEXT_PUBLIC_MDT_API_BASE_URL=http://localhost:8000
+   ```
+
+3. Upload `data/hackathon-mdt-outcome-proformas.docx` via the UI. The browser receives:
+   - `generated-database.xlsx` (styled workbook driven by the prototype).
+   - `coverage-report.pdf` (textual summary + coverage histogram).
+
+### Docker Compose (dev)
+
+```bash
+docker compose up --build
+```
+
+- `backend`: Python 3.12 image running FastAPI + Claude pipeline. Temporary files live under `/app/tmp` (bound to `./tmp`).
+- `frontend`: Node 20 image running `npm run dev` with hot reload (`./frontend` mounted). Env var `NEXT_PUBLIC_MDT_API_BASE_URL` already points to `http://localhost:8000` so the browser can reach the backend exposed on the host.
+
+### API Contract
+
+```
+POST /extract  Content-Type: multipart/form-data (field: file)
+Response 200:
+{
+  "results": { ...coverage stats... },
+  "workbook_base64": "<base64 of generated Excel>",
+  "report_pdf_base64": "<base64 of PDF coverage report>"
+}
+```
+
+Client steps:
+1. Upload `.docx`.
+2. Decode `workbook_base64` → `Blob` → download `generated-database.xlsx`.
+3. Decode `report_pdf_base64` → `Blob` → download `coverage-report.pdf`.
+4. Optional: display `results` summary in the UI.
+
+### Analysis CLI
+
+```
+python server/analyse.py --file baseline-solution/output/generated-database-claude.xlsx \
+    --output coverage.txt \
+    --chart coverage.png
+```
+
+The script prints a detailed report, optionally saves it to text, and can render category charts or the multi-page PDF (used by the API).
+
 ## Workshops Tuesday 17 - Thursday 19
 
 All rooms in College Building. To attend online, use the [Activities Meeting Link](#activities-meeting-link).
