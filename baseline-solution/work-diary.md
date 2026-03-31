@@ -326,6 +326,34 @@ Implement the first executable version of the standard solution pipeline.
 ### Entry Block Signature
 This entry was written by Gemini CLI.
 
+## Session: Next-Gen Debrief (Codex)
+
+**Date:** March 31, 2026
+
+### Objective
+Write a short, plain-language debrief for an NHS clinical contact ahead of the next hackathon invitation.
+
+### Inspected
+- `baseline-solution/prompts/00-prompt-starter.md`: followed the required onboarding and handoff instructions before carrying out further work in `baseline-solution/`.
+- `baseline-solution/prompts/08-next-gen-debrief-prompt.md`: used as the execution prompt for the requested debrief.
+- `baseline-solution/work-diary.md`: reviewed prior prompt execution and repository state before writing.
+- `docs/next-hackathon-brief.md`: checked the underlying event brief for wording and venue details.
+
+### Changed
+- Created `baseline-solution/reports/next-gen-debrief-codex.md`: a standalone markdown debrief written in plain language, with the NHS ask first, the first hackathon summary, the April 13-17, 2026 event window, the on-day request for clinical feedback, and the call for future NHS problem statements.
+
+### Why
+- The prompt required a short letter-style document that can be sent to a non-technical NHS contact without further rewriting.
+- The wording was kept direct and conservative so it can be reused in an email or briefing note.
+
+### Notes
+- Verified the new debrief is under the 200-word limit.
+- Noted a date mismatch in `baseline-solution/prompts/08-next-gen-debrief-prompt.md`: it says "Thursday 17 April", but April 17, 2026 falls on a Friday. The debrief keeps the date and time from the brief but avoids repeating the incorrect weekday.
+- Prompt followed for these tasks: `baseline-solution/prompts/08-next-gen-debrief-prompt.md`.
+
+### Entry Block Signature
+This entry was written by Codex.
+
 ## Session: Excel Presentation Alignment (Codex)
 
 **Date:** March 15, 2026
@@ -740,3 +768,65 @@ This entry was written by Gemini CLI.
 
 
 
+
+## Session: Participant Feedback Form (Gemini CLI)
+
+**Date:** March 22, 2026
+
+### Objective
+Create a feedback form for hackathon participants to gather insights on the technical, clinical, and logistical aspects of the event.
+
+### Inspected
+- `docs/judging-criteria.md`: aligned feedback questions with event goals.
+- `baseline-solution/prompts/00-prompt-starter.md`: followed the handoff protocol.
+
+### Changed
+- Created `docs/participant-feedback-form.md`: includes 6 sections (Overall Experience, Technical Challenge & Data, Clinical Domain & Support, Logistics & Environment, Impact & Future Interest, and Open Feedback).
+
+### Why
+- Capturing participant feedback is critical for measuring the hackathon's success and refining the standard solution path.
+- The questions are designed to distinguish between the complexity of the data itself and the clarity of the provided support materials (e.g., the colorectal primer and baseline code).
+
+### Entry Block Signature
+
+This entry was written by Gemini CLI.
+
+## Session: Next-Gen Debrief Document
+
+**Date:** March 31, 2026
+
+### Objective
+
+Write a short, plain-language debrief for an NHS clinical contact with no technical background,
+covering the first hackathon and the invitation to the next.
+
+### Inspected
+
+- `docs/next-hackathon-brief.md`: source brief containing the ask, event dates, venue, and
+  requirements for the debrief content.
+- `baseline-solution/reports/final-presentation-plan.md`: confirmed what the first hackathon
+  tackled (colorectal MDT extraction problem) and how it was framed.
+- `baseline-solution/prompts/08-next-gen-debrief-prompt.md`: followed this prompt in full.
+
+### Changed
+
+- Added `baseline-solution/reports/next-gen-debrief-claude.md`: a 190-word letter-style debrief
+  covering the event invitation (17 April, 10:00–15:30, Chiswick Park), what the hackathon is,
+  what happened in the first event, what NHS staff are asked to do on the day, and the call for
+  future problem statements. Written in plain prose with no bullet lists, no jargon, and no
+  buzzwords.
+
+### Why
+
+- An NHS contact with no prior connection to the hackathon needs a concise, readable document
+  before a formal invitation can be made.
+- The brief specified a 200-word cap and plain language, so the document was written and
+  word-counted to stay within that limit.
+
+### Prompt Followed
+
+`baseline-solution/prompts/08-next-gen-debrief-prompt.md`
+
+### Entry Block Signature
+
+This entry was written by Claude Code.
