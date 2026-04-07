@@ -185,6 +185,10 @@ Join any time to fine tune your work, or start from scratch.
 
 **Closing Ceremony** — Tait Building C322 — 14:30–15:00
 
+## Presentation slots
+
+You can find the presentation slots for each team here: [Presentation Slots](docs/clinical-ai-hackathon-presentation-slots.pdf)
+
 ## Activities Meeting Link
 
 ```
