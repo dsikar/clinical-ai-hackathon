@@ -149,7 +149,7 @@ All rooms in College Building. To attend online, use the [Activities Meeting Lin
   **Blazej Barski** — *Building with AI Coding - From a non-coder perspective*
   Blazej built a chrome extension purely by prompting, and the results I am sure will inspire you.
 
-- **14:00–15:00** — A220 (14:00–14:30) then A108 (14:30–15:00) and Online
+- **13:00-15:00** — A111 and Online
   **Syed Mahbubul Huq** — *Coding with LLM APIs using Python and Google Colab*
   Syed will demonstrate how to send prompts to LLMs programatically, by using Python scripts running on the Google Colab Platform.
 
