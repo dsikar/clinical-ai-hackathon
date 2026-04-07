@@ -1,6 +1,6 @@
 # Clinical AI Hackathon — Debrief and Invitation
 
-We would like to invite NHS clinical staff to join us on Thursday 17 April, 10:00–15:30, at Richmond American University London, Building 12, Chiswick Park, 566 Chiswick High Road, London W4 5AN.
+We would like to invite NHS clinical staff to join us on Friday 17 April, 10:00–15:30, at Richmond American University London, Building 12, Chiswick Park, 566 Chiswick High Road, London W4 5AN.
 
 The hackathon runs from 13–17 April 2026. Over that week, student teams work intensively on real healthcare problems, building practical software tools that could reduce workload or improve patient care. NHS clinical staff attend on the final day to review what the teams have built and share their perspective from a clinical or operational point of view.
 
