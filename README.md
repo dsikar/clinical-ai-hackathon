@@ -218,7 +218,7 @@ Y4hu3WK2
 ## Winners
 
 - **Overall Winner:** Emily and the Gang (Jaeeun Lee, Joshua Bhawanlall, Matilde Sciarrini, Miesha Miah, Pritish Ranjan Verma)
-- **Best Understanding:** Cloud9 (Bhuvanesi Barua, Dhruvi Patadia)
+- **Best Understanding:** Cloud9 (Bhuvanesi Barua, Dhruvi Patadia, Parag Dharadhar) - [repo](https://github.com/ParagE404/Clinical_AI_Hackathon_Team_Cloud9)
 - **Best Solution:** Team B.A.M. (Ayantik Ray, Badrinarayan Nandakumar)
 
 ### Scoring Sheets
